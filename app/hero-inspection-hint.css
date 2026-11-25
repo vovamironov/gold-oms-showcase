@@ -1,0 +1,50 @@
+.hero-inspection-hint {
+  display: none;
+}
+
+:is(.bars-page .bars-compact-showcase-viewer, .oms-page .oms-final-visual) > .hero-inspection-hint {
+  position: absolute;
+  z-index: 2;
+  inset: auto 16px 8px;
+  margin: 0;
+  color: var(--tui-text-tertiary, rgba(0, 0, 0, .4));
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  text-wrap: balance;
+  pointer-events: none;
+  transform: translateY(var(--hero-flight-offset, 0px));
+  /* Cancel the downward offset at the clipping edge so it stays above the card. */
+  clip-path: inset(0 0 clamp(0px, var(--hero-flight-offset, 100%), 100%));
+}
+
+:is(.bars-page, .oms-page) .hero-inspection-hint[data-state=visible] {
+  clip-path: none;
+}
+
+.hero-inspection-hint[data-state=dismissed] {
+  opacity: 0;
+  transition: opacity 160ms ease-out;
+}
+
+@media (max-width: 700px) {
+  .bars-page .hero-inspection-hint:not([hidden]) { display: block }
+}
+
+@media (max-width: 767px) {
+  .oms-page .hero-inspection-hint:not([hidden]) { display: block }
+}
+
+@media (max-width: 380px) {
+  .bars-page .bars-compact-showcase-viewer:not(:has(> [data-inline-on-mobile])) {
+    &:has(> .hero-inspection-hint) { margin-bottom: 8px }
+    & > .hero-inspection-hint { bottom: 0 }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(.bars-page .bars-compact-showcase-viewer, .oms-page .oms-final-visual) > .hero-inspection-hint {
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,886 @@
+@font-face {
+  font-family: Account Body;
+  src: url('/chart-fonts/neue-haas-unica-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+#account-dialog {
+  --account-field-label-scale: .8667;
+  --account-label-color: rgba(0, 0, 0, .54);
+  width: min(400px, calc(100vw - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 24px;
+  overflow: auto;
+  background: transparent;
+  color: rgba(0, 0, 0, .8);
+  box-shadow: none;
+  font-family: Account Body, Final T-Sans, sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+#account-dialog[open] {
+  display: flex;
+}
+
+#account-dialog [hidden] {
+  display: none !important;
+}
+
+#account-dialog::backdrop {
+  background: rgba(0, 0, 0, .6);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+#account-dialog .account-flow-shell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 24px;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .16);
+}
+
+#account-dialog .account-flow-grabber {
+  display: none;
+}
+
+#account-dialog .account-flow-header {
+  flex: 0 0 auto;
+}
+
+#account-dialog:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested']) .account-flow-header {
+  order: 1;
+  text-align: center;
+}
+
+#account-dialog #account-flow-title {
+  margin: 0;
+  padding: 0 38px 0 0;
+  font-family: Final T-Sans, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0;
+  font-feature-settings: 'liga' 0;
+  white-space: pre-line;
+}
+
+#account-dialog #account-flow-title:focus {
+  outline: none;
+}
+
+#account-dialog:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested']) #account-flow-title {
+  padding: 0;
+}
+
+#account-dialog .account-flow-description {
+  margin: 8px 0 0;
+  color: var(--account-label-color);
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 0;
+  white-space: pre-line;
+}
+
+#account-dialog[data-mobile='false']:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested']) {
+  width: min(600px, calc(100vw - 32px));
+  overflow: visible;
+  /* Keep the TUI popup shadow outside the scrollable result surface. */
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .16);
+}
+
+#account-dialog[data-mobile='false']:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested'])::backdrop {
+  background-color: rgba(0, 0, 0, .7);
+}
+
+#account-dialog[data-mobile='false']:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested']) .account-flow-shell {
+  gap: 0;
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  overflow-y: auto;
+  box-shadow: none;
+}
+
+#account-dialog[data-mobile='false']:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested']) #account-status-panel {
+  align-items: center;
+  height: 280px;
+}
+
+#account-dialog[data-mobile='false']:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested']) .account-flow-header {
+  padding: 40px 40px 8px;
+}
+
+#account-dialog[data-mobile='false']:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested']) #account-flow-title {
+  font-size: 28px;
+  line-height: 32px;
+}
+
+#account-dialog[data-mobile='false'] #account-status-description {
+  color: inherit;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+#account-dialog[data-mobile='false']:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested']) .account-flow-footer {
+  padding: 28px 40px 40px;
+}
+
+#account-dialog[data-mobile='false']:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested']) #account-status-action {
+  height: 56px;
+  padding: 16px 20px;
+  border-radius: 12px;
+}
+
+#account-dialog #account-code-subtitle {
+  display: none;
+}
+
+#account-dialog[data-step='code'] #account-code-subtitle {
+  display: block;
+}
+
+#account-dialog .account-flow-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  place-items: center;
+  border: 0;
+  border-radius: 20px;
+  background: rgba(36, 74, 127, .06);
+  cursor: pointer;
+}
+
+#account-dialog .account-flow-close span {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: rgba(0, 0, 0, .4);
+  -webkit-mask: url('/oms-account/close.svg') center / 16px 16px no-repeat;
+  mask: url('/oms-account/close.svg') center / 16px 16px no-repeat;
+}
+
+#account-dialog .account-flow-fields {
+  min-width: 0;
+}
+
+#account-dialog:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested'], [data-step='result'], [data-step='confirm']) .account-flow-fields {
+  display: none;
+}
+
+#account-dialog .account-flow-field {
+  position: relative;
+}
+
+#account-dialog .account-flow-field label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  color: var(--account-label-color);
+  pointer-events: none;
+  transform: translateY(-50%);
+  transform-origin: left center;
+  transition: transform 140ms ease-out;
+}
+
+#account-dialog .account-flow-field:has(.account-flow-input:not(:placeholder-shown)) label {
+  top: 9px;
+  font-size: 13px;
+  line-height: 16px;
+  transform: none;
+}
+
+#account-dialog .account-flow-input {
+  display: block;
+  width: 100%;
+  height: 56px;
+  margin: 0;
+  padding: 18px 44px 0 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  border-radius: 12px;
+  outline: none;
+  background: rgba(36, 74, 127, .06);
+  color: rgba(0, 0, 0, .8);
+  font: inherit;
+  caret-color: #428bf9;
+}
+
+#account-dialog .account-flow-input:placeholder-shown,
+#account-dialog[data-step='code'] .account-flow-input:not([aria-invalid='true']) {
+  padding-top: 0;
+}
+
+#account-dialog[data-step='code'] .account-flow-field:has(.account-flow-input:not(:placeholder-shown):not([aria-invalid='true'])) label {
+  visibility: hidden;
+}
+
+#account-dialog .account-flow-input[aria-invalid='true'] {
+  box-shadow: inset 0 0 0 1px #f52222;
+}
+
+#account-dialog .account-flow-clear {
+  position: absolute;
+  inset: 0 0 0 auto;
+  display: grid;
+  width: 44px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  cursor: pointer;
+}
+
+#account-dialog .account-flow-clear span {
+  display: grid;
+  width: 16px;
+  height: 16px;
+  place-items: center;
+  border-radius: 50%;
+  background: transparent;
+}
+
+#account-dialog .account-flow-clear span::before {
+  width: 16px;
+  height: 16px;
+  background: rgba(0, 0, 0, .4);
+  -webkit-mask: url('/oms-account/close.svg') center / contain no-repeat;
+  mask: url('/oms-account/close.svg') center / contain no-repeat;
+  content: '';
+}
+
+#account-dialog #account-field-error {
+  margin: 8px 0 0;
+  color: #e31c1c;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+#account-dialog #account-status-panel {
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  height: 220px;
+}
+
+#account-dialog #account-status-image {
+  display: block;
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+}
+
+#account-dialog .account-flow-footer {
+  order: 2;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 12px;
+}
+
+#account-dialog[data-step='code'] .account-flow-footer {
+  display: none;
+}
+
+#account-dialog .account-flow-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#account-dialog:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested']) .account-flow-actions {
+  justify-content: center;
+}
+
+#account-dialog:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested']) .account-flow-footer {
+  justify-content: center;
+}
+
+#account-dialog .account-flow-primary {
+  display: block;
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 120px;
+  height: 44px;
+  margin: 0;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #ffdd2d;
+  color: #333;
+  font: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+#account-dialog #account-status-action {
+  min-width: 131px;
+}
+
+#account-dialog[data-mobile='false'][data-step='non-client'] #account-status-action {
+  min-width: 156px;
+}
+
+#account-dialog .account-flow-primary:hover {
+  background: #f4d328;
+}
+
+#account-dialog .account-flow-primary:disabled {
+  cursor: default;
+  opacity: .6;
+}
+
+#account-dialog .account-flow-legal {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  color: rgba(0, 0, 0, .4);
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0;
+}
+
+#account-dialog .account-flow-legal a {
+  color: var(--blue, #126df7);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+#account-dialog #account-confirm-action {
+  min-width: 126px;
+}
+
+#account-dialog .account-confirm-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: -4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+#account-dialog .account-confirm-benefit {
+  display: flex;
+  min-height: 56px;
+  gap: 16px;
+}
+
+#account-dialog .account-confirm-avatar {
+  display: grid;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+  border-radius: 12px;
+  place-items: center;
+  background: rgba(36, 74, 127, .06);
+}
+
+#account-dialog .account-confirm-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+#account-dialog .account-confirm-icon img {
+  display: block;
+}
+
+#account-dialog .account-confirm-icon-percent {
+  background: rgba(0, 0, 0, .8);
+  -webkit-mask: url('/oms-account/benefit-percent.svg') 1px 1px / 22px 22px no-repeat;
+  mask: url('/oms-account/benefit-percent.svg') 1px 1px / 22px 22px no-repeat;
+}
+
+#account-dialog .account-confirm-copy {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+  padding-block: 8px;
+}
+
+#account-dialog .account-confirm-title {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+#account-dialog .account-confirm-description {
+  color: rgba(0, 0, 0, .54);
+  font-size: 13px;
+  line-height: 16px;
+}
+
+#account-dialog .account-flow-resend {
+  display: block;
+  margin: 20px 0 0;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--account-resend-color, var(--blue, #126df7));
+  font: inherit;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: left;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  #account-dialog .account-flow-resend:hover:not(:disabled) {
+    text-decoration: underline;
+  }
+}
+
+#account-dialog .account-flow-resend:disabled {
+  color: var(--account-resend-color, var(--blue, #126df7));
+  cursor: default;
+}
+
+#account-dialog button:focus-visible {
+  outline: 2px solid #428bf9;
+  outline-offset: 2px;
+}
+
+#account-dialog[data-mobile='true'] {
+  --account-bottom-padding: 48px;
+  --account-field-label-scale: .7647;
+  --account-label-color: #9299a2;
+  position: fixed;
+  inset: auto;
+  top: var(--account-top, 0px);
+  left: var(--account-left, 0px);
+  flex-direction: column;
+  justify-content: flex-end;
+  width: var(--account-width, 100vw);
+  height: var(--account-height, 100dvh);
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border-radius: 0;
+  overflow: visible;
+  color: #333;
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: -.41px;
+}
+
+#account-dialog[data-mobile='true']::backdrop {
+  background: rgba(0, 0, 0, .5);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+#account-dialog .account-flow-toolbar-surface {
+  display: none;
+}
+
+@supports (-webkit-touch-callout: none) {
+  #account-dialog[open][data-mobile='true'][data-constrained='false'] .account-flow-toolbar-surface {
+    /* Give Safari a white edge to sample independently of the keyboard resize. */
+    display: block;
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 2;
+    height: 16px;
+    background: #fff;
+    pointer-events: none;
+  }
+}
+
+#account-dialog[data-mobile='true'][data-constrained='false']::after {
+  position: absolute;
+  /* The 1px overlap prevents a seam at fractional visualViewport bounds. */
+  top: calc(100% - 1px);
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: 100vh;
+  height: 100lvh;
+  background: #fff;
+  pointer-events: none;
+  content: '';
+}
+
+#account-dialog[data-mobile='true'][data-constrained='true'] {
+  overflow: hidden;
+}
+
+#account-dialog[data-mobile='true'][data-constrained='true']::backdrop {
+  background: transparent;
+}
+
+#account-dialog[data-mobile='true'][data-constrained='true']::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, .5);
+  content: '';
+}
+
+#account-dialog[data-mobile='true'] .account-flow-shell {
+  position: relative;
+  z-index: 1;
+  flex: 0 1 auto;
+  gap: 0;
+  max-height: 100%;
+  padding: 0 0 var(--account-bottom-padding);
+  border-radius: 36px 36px 0 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  transform: translateY(var(--account-drag-y, 0px));
+  box-shadow: 0 6px 34px rgba(0, 0, 0, .12);
+}
+
+#account-dialog[data-mobile='true']:has(.account-flow-input:focus) .account-flow-shell {
+  --account-bottom-padding: 24px;
+}
+
+#account-dialog[data-mobile='true']:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested']) .account-flow-shell {
+  /* Keep the artwork flexible while preserving the result layout's lower inset on tall screens. */
+  --account-bottom-padding: clamp(32px, calc(32px + (var(--account-height, 100dvh) - 632px) * .4), 104px);
+  height: calc(100% - 16px);
+}
+
+#account-dialog[data-closing='true'] .account-flow-shell {
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #account-dialog[data-mobile='true'][data-constrained='false'][data-viewport-ready='true'] {
+    /* The sheet and keyboard fill share the same moving bottom edge. */
+    transition: height 240ms cubic-bezier(.25,.6,.25,1);
+  }
+
+  #account-dialog::backdrop,
+  #account-dialog[data-constrained='true']::before {
+    opacity: 1;
+    transition: opacity 280ms ease-out, background-color 240ms ease-out;
+  }
+
+  @starting-style {
+    #account-dialog::backdrop,
+    #account-dialog[data-constrained='true']::before {
+      opacity: 0;
+    }
+  }
+
+  #account-dialog[data-closing='true']::backdrop,
+  #account-dialog[data-closing='true'][data-constrained='true']::before {
+    opacity: 0;
+    transition-duration: 220ms;
+  }
+
+  #account-dialog[data-step='code'] :is(#account-flow-title, #account-code-subtitle, #account-code-step, #account-resend),
+  #account-dialog:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested'])
+    :is(.account-flow-header, #account-status-panel, #account-status-action) {
+    animation: account-step-appear 240ms ease-out both;
+  }
+}
+
+@keyframes account-step-appear {
+  from { opacity: .2; }
+  to { opacity: 1; }
+}
+
+#account-dialog[data-mobile='true'] .account-flow-grabber {
+  display: grid;
+  flex: 0 0 16px;
+  width: 100%;
+  height: 16px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  place-items: center;
+  background: transparent;
+  cursor: grab;
+}
+
+#account-dialog[data-mobile='true']:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested']) .account-flow-grabber {
+  display: none;
+}
+
+#account-dialog[data-mobile='true'] .account-flow-grabber span {
+  display: block;
+  width: 32px;
+  height: 4px;
+  border-radius: 100px;
+  background: rgba(0, 16, 36, .22);
+}
+
+#account-dialog[data-mobile='true'] .account-flow-header {
+  padding: 12px 16px 20px;
+}
+
+#account-dialog[data-mobile='true'] :is(.account-flow-grabber, .account-flow-header) {
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#account-dialog[data-mobile='true'][data-dragging='true'] :is(.account-flow-grabber, .account-flow-header) {
+  cursor: grabbing;
+}
+
+#account-dialog[data-mobile='true'] #account-flow-title {
+  padding: 0;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: .38px;
+}
+
+#account-dialog[data-mobile='true'] .account-flow-close {
+  display: none;
+}
+
+#account-dialog[data-mobile='true']:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested']) .account-flow-close {
+  right: auto;
+  left: 16px;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, .1);
+}
+
+#account-dialog[data-mobile='true'] .account-flow-close span {
+  width: 18px;
+  height: 18px;
+  background: #333;
+  -webkit-mask: url('/oms-account/close-ios26.svg') center / contain no-repeat;
+  mask: url('/oms-account/close-ios26.svg') center / contain no-repeat;
+}
+
+#account-dialog[data-mobile='true'] .account-flow-fields {
+  flex: 0 0 auto;
+  padding: 0 16px;
+}
+
+#account-dialog[data-mobile='true'][data-step='code'] .account-flow-fields {
+  padding-inline: 16px;
+}
+
+#account-dialog[data-mobile='true'][data-step='code'] .account-flow-shell {
+  --account-bottom-padding: 24px;
+}
+
+#account-dialog[data-mobile='true'] .account-flow-resend {
+  --account-resend-color: #428bf9;
+  position: relative;
+  width: 100%;
+  min-height: 24px;
+  margin-top: 24px;
+  padding: 2px 0;
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: -.41px;
+  text-align: center;
+}
+
+#account-dialog[data-mobile='true'] .account-flow-resend::after {
+  position: absolute;
+  inset: -10px 0;
+  content: '';
+}
+
+#account-dialog[data-mobile='true'] .account-flow-field label {
+  left: 12px;
+}
+
+#account-dialog[data-mobile='true'] .account-flow-field:has(.account-flow-input:not(:placeholder-shown)) label {
+  letter-spacing: -.08px;
+}
+
+#account-dialog[data-mobile='true'] .account-flow-input {
+  padding: 18px 44px 0 12px;
+  border-radius: 16px;
+  background: rgba(0, 16, 36, .03);
+  color: #333;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+#account-dialog[data-mobile='true'] .account-flow-input:placeholder-shown,
+#account-dialog[data-mobile='true'][data-step='code'] .account-flow-input:not([aria-invalid='true']) {
+  padding-top: 0;
+}
+
+#account-dialog[data-mobile='true'] .account-flow-input[aria-invalid='true'] {
+  box-shadow: none;
+}
+
+#account-dialog[data-mobile='true'] .account-flow-clear {
+  width: 40px;
+}
+
+#account-dialog[data-mobile='true'] .account-flow-clear span {
+  background: rgba(0, 16, 36, .22);
+}
+
+#account-dialog[data-mobile='true'] .account-flow-clear span::before {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+}
+
+#account-dialog[data-mobile='true'] #account-field-error {
+  margin: 12px 12px 0;
+  padding-bottom: 12px;
+  color: #ff3333;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: -.24px;
+}
+
+#account-dialog[data-mobile='true'][data-step='code'] #account-field-error {
+  padding-bottom: 2px;
+}
+
+#account-dialog[data-mobile='true'] .account-flow-description {
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: -.24px;
+}
+
+#account-dialog[data-mobile='true']:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested']) .account-flow-header {
+  align-self: center;
+  width: min(290px, calc(100% - 32px));
+  min-height: 140px;
+  padding: 16px 0 24px;
+}
+
+#account-dialog[data-mobile='true'] #account-status-panel {
+  flex: 1 0 144px;
+  align-items: center;
+  min-height: 144px;
+  padding: 32px;
+}
+
+#account-dialog[data-mobile='true'] #account-status-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#account-dialog[data-mobile='true'] .account-flow-footer {
+  display: block;
+  padding-top: 24px;
+}
+
+#account-dialog[data-mobile='true'][data-step='code'] .account-flow-footer {
+  display: none;
+}
+
+#account-dialog[data-mobile='true'] .account-flow-legal {
+  margin: 16px 16px 0;
+  color: #9299a2;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: -.08px;
+  text-align: center;
+}
+
+#account-dialog[data-mobile='true'] .account-flow-legal a {
+  color: #428bf9;
+}
+
+#account-dialog[data-mobile='true'][data-step='confirm'] .account-flow-header {
+  padding-bottom: 12px;
+}
+
+#account-dialog[data-mobile='true'] .account-confirm-benefits {
+  margin: 0;
+  padding-inline: 19.2px;
+}
+
+#account-dialog[data-mobile='true'] .account-confirm-avatar {
+  background: rgba(0, 16, 36, .06);
+}
+
+#account-dialog[data-mobile='true'] .account-confirm-title {
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: -.41px;
+}
+
+#account-dialog[data-mobile='true'] .account-confirm-description {
+  color: #9299a2;
+  letter-spacing: -.08px;
+}
+
+#account-dialog[data-mobile='true'] .account-confirm-icon-percent {
+  background: #333;
+}
+
+#account-dialog[data-mobile='true'][data-step='confirm'] .account-flow-footer {
+  padding-top: 20px;
+}
+
+#account-dialog[data-mobile='true']:is([data-step='opened'], [data-step='existing'], [data-step='non-client'], [data-step='opening-error'], [data-step='requested']) .account-flow-footer {
+  padding-top: 0;
+}
+
+#account-dialog[data-mobile='true'] .account-flow-actions {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  padding: 0 16px;
+}
+
+#account-dialog[data-mobile='true'] .account-flow-primary {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 56px;
+  padding: 16px;
+  border: 0;
+  border-radius: 16px;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+#account-dialog[data-mobile='true'] #account-status-action {
+  width: min(290px, 100%);
+  margin-inline: auto;
+}
+
+#account-dialog[data-mobile='true']:is([data-step='result'], [data-step='install']) #account-status-action {
+  width: 100%;
+}
+
+#account-dialog[data-mobile='true']:is([data-step='result'], [data-step='install']) .account-flow-shell {
+  --account-bottom-padding: 24px;
+}
+
+#account-dialog[data-mobile='true']:is([data-step='result'], [data-step='install']) .account-flow-header {
+  padding-bottom: 12px;
+}
+
+#account-dialog[data-mobile='true']:is([data-step='result'], [data-step='install']) .account-flow-footer {
+  padding-top: 20px;
+}

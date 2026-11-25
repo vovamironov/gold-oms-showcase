@@ -1,0 +1,800 @@
+{
+  "version": 2,
+  "format": "oms-nugget-shared-topology-v1",
+  "endianness": "little",
+  "sourceFile": "GoldExport.glb",
+  "sourceSHA256": "bcc2e2496f692cc05e66d8d4ccbac92d20d340351c21bd3218bc57fdf00bb4e0",
+  "generator": "scripts/generate-oms-nugget-morph.py",
+  "geometry": "Radial source-derived resampling onto one closed icosphere topology; source landmark and secondary groove fields maintain the organic family. Stages 4–7 retain stronger source-seed planes and add 2/3/4/4 whole inward support-plane cuts without spatial falloff, with exact interiors and narrow worn shoulders; other stages remain unchanged.",
+  "normalsPolicy": "Geometric smooth area-weighted unit normals on every stage",
+  "facetCountDefinition": "sourceMacroFacets records historical source-shape polygon counts, not the visible facet count of the resampled morph target; every target has the same triangle count",
+  "smoothing": {
+    "method": "uniform neighbor Laplacian",
+    "iterations": 7,
+    "strength": 0.42,
+    "stageOverrides": {
+      "4": {
+        "iterations": 5
+      },
+      "5": {
+        "iterations": 5
+      },
+      "6": {
+        "iterations": 4
+      },
+      "7": {
+        "iterations": 4
+      }
+    }
+  },
+  "progression": {
+    "macroSourceFilteringIterations": 55,
+    "sourceLandmarkBlend": [
+      0.065,
+      0.1,
+      0.17,
+      0.1,
+      0.14,
+      0.22,
+      0.3,
+      0.85,
+      0.94,
+      1
+    ],
+    "secondaryGrooveBlend": [
+      0,
+      0,
+      0.015,
+      0.05,
+      0.11,
+      0.18,
+      0.28,
+      0.45,
+      0.65,
+      1
+    ],
+    "lateMacroSeedStage": 7
+  },
+  "localCutPolicy": "Applied after base Laplacian smoothing to stages 4–7 only. Whole inward halfspaces without angular falloff; support at base maximum minus .14–.18 units; exact planar interiors and .025-unit C1 intersection shoulders. No additional global smoothing. Final affine bounds normalization preserves planarity.",
+  "vertexCount": 10242,
+  "triangleCount": 20480,
+  "indices": {
+    "byteOffset": 0,
+    "count": 61440,
+    "componentType": "uint16"
+  },
+  "binary": {
+    "file": "nugget-morph.bin",
+    "bytes": 2580960,
+    "sha256": "95b8f52a90cb374b7ab2b2b6c163b43d7a2debe6896b5164269ef6e0237c419c"
+  },
+  "displayBounds": [
+    3.7,
+    3.3,
+    3.05
+  ],
+  "recommendedRotationRadians": [
+    0,
+    0,
+    0
+  ],
+  "bakedSourceRotationRadians": [
+    0.16,
+    -0.45,
+    -0.12
+  ],
+  "stageRule": "continuous weight: <=1g uses target1; whole gram milestones 1…10 map to targets; decimal grams linearly interpolate adjacent targets, then runtime applies a temporal spring",
+  "texturePolicy": "No embedded image textures; browser provides the shared gold material",
+  "sourceShapeDirectory": "source-shapes",
+  "shapes": [
+    {
+      "stage": 1,
+      "name": "1 g",
+      "positions": {
+        "byteOffset": 122880,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "normals": {
+        "byteOffset": 245784,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "sourceMacroFacets": 8,
+      "file": "nugget-01.glb",
+      "macroSeedStage": 1,
+      "macroSeedShapeSHA256": "e1d67f6c5ff97de94c322fc0ef250962bf44e4d7a1a2433e8ed130f759e9fb92",
+      "sourceLandmarkBlend": 0.065,
+      "secondaryGrooveBlend": 0,
+      "targetSmoothingIterations": 7,
+      "localInwardCuts": [],
+      "sourceShapeSHA256": "e1d67f6c5ff97de94c322fc0ef250962bf44e4d7a1a2433e8ed130f759e9fb92",
+      "nativeDetailSourceSHA256": "76707814f7a817d270368f178836e95aa725ed7c347c62457265a9a65a408888",
+      "bounds": {
+        "min": [
+          -1.850000023841858,
+          -1.649999976158142,
+          -1.524999976158142
+        ],
+        "max": [
+          1.850000023841858,
+          1.649999976158142,
+          1.524999976158142
+        ]
+      },
+      "bytes": 369740,
+      "sha256": "a0414b0eb1afd254a2914b37b8b75f239388c2e9f41d8e976036e72f8a5add9a"
+    },
+    {
+      "stage": 2,
+      "name": "2 g",
+      "positions": {
+        "byteOffset": 368688,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "normals": {
+        "byteOffset": 491592,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "sourceMacroFacets": 12,
+      "file": "nugget-02.glb",
+      "macroSeedStage": 2,
+      "macroSeedShapeSHA256": "25f9b12789fa36858738f7e03cc1a590cbd423be4b3f19f73d06f49a077e4c04",
+      "sourceLandmarkBlend": 0.1,
+      "secondaryGrooveBlend": 0,
+      "targetSmoothingIterations": 7,
+      "localInwardCuts": [],
+      "sourceShapeSHA256": "25f9b12789fa36858738f7e03cc1a590cbd423be4b3f19f73d06f49a077e4c04",
+      "nativeDetailSourceSHA256": "76707814f7a817d270368f178836e95aa725ed7c347c62457265a9a65a408888",
+      "bounds": {
+        "min": [
+          -1.850000023841858,
+          -1.649999976158142,
+          -1.524999976158142
+        ],
+        "max": [
+          1.850000023841858,
+          1.649999976158142,
+          1.524999976158142
+        ]
+      },
+      "bytes": 369740,
+      "sha256": "bd6c924f40b111232ea0e4de5a46ae27cef088444190910dc20452febd6d9453"
+    },
+    {
+      "stage": 3,
+      "name": "3 g",
+      "positions": {
+        "byteOffset": 614496,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "normals": {
+        "byteOffset": 737400,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "sourceMacroFacets": 18,
+      "file": "nugget-03.glb",
+      "macroSeedStage": 3,
+      "macroSeedShapeSHA256": "a2a6db5d5efefa2a8c433cecaa55bcf2909dd59252a0b5a4ef222fc5225220dc",
+      "sourceLandmarkBlend": 0.17,
+      "secondaryGrooveBlend": 0.015,
+      "targetSmoothingIterations": 7,
+      "localInwardCuts": [],
+      "sourceShapeSHA256": "a2a6db5d5efefa2a8c433cecaa55bcf2909dd59252a0b5a4ef222fc5225220dc",
+      "nativeDetailSourceSHA256": "76707814f7a817d270368f178836e95aa725ed7c347c62457265a9a65a408888",
+      "bounds": {
+        "min": [
+          -1.850000023841858,
+          -1.649999976158142,
+          -1.524999976158142
+        ],
+        "max": [
+          1.850000023841858,
+          1.649999976158142,
+          1.524999976158142
+        ]
+      },
+      "bytes": 369740,
+      "sha256": "bbec5f55a393356215523da929d3edbcc6711b04a5e47ccdb58c878f3d9c0fc1"
+    },
+    {
+      "stage": 4,
+      "name": "4 g",
+      "positions": {
+        "byteOffset": 860304,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "normals": {
+        "byteOffset": 983208,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "sourceMacroFacets": 25,
+      "file": "nugget-04.glb",
+      "macroSeedStage": 4,
+      "macroSeedShapeSHA256": "b0e1f2b28a6ade6a33c5d8d02b16476d39fee974ac24621b26e82f66e60b2bc6",
+      "sourceLandmarkBlend": 0.1,
+      "secondaryGrooveBlend": 0.05,
+      "targetSmoothingIterations": 5,
+      "localInwardCuts": [
+        {
+          "name": "upper-left",
+          "method": "whole inward halfspace; no spatial falloff",
+          "orientationSampleDirection": [
+            -0.41740647959800287,
+            0.35896957245428246,
+            0.8348129591960057
+          ],
+          "normalTiltDegrees": 14,
+          "supportInsetFromBaseMaximum": 0.16,
+          "intersectionShoulderUnits": 0.025,
+          "modifiedVertexCount": 552,
+          "exactPlanarCoreVertexCountBeforeLaterCuts": 456,
+          "affectedBaseSurfaceArea": 1.658821195166499,
+          "affectedProjectedExtentXY": [
+            1.2192632784715505,
+            1.4100710306419004
+          ],
+          "maximumInwardDisplacement": 0.17161090833141213,
+          "finalExactPlanarCoreVertexCountBeforeBoundsFit": 412,
+          "finalExactPlanarCoreProjectedExtentXY": [
+            1.056259283907121,
+            1.2269474887915652
+          ]
+        },
+        {
+          "name": "right",
+          "method": "whole inward halfspace; no spatial falloff",
+          "orientationSampleDirection": [
+            0.5015492337639244,
+            0.025942201746409883,
+            0.8647400582136627
+          ],
+          "normalTiltDegrees": 16,
+          "supportInsetFromBaseMaximum": 0.15,
+          "intersectionShoulderUnits": 0.025,
+          "modifiedVertexCount": 254,
+          "exactPlanarCoreVertexCountBeforeLaterCuts": 175,
+          "affectedBaseSurfaceArea": 0.7293078102972367,
+          "affectedProjectedExtentXY": [
+            1.049148035848199,
+            1.0423897962700004
+          ],
+          "maximumInwardDisplacement": 0.1372928269466553,
+          "finalExactPlanarCoreVertexCountBeforeBoundsFit": 176,
+          "finalExactPlanarCoreProjectedExtentXY": [
+            0.8708299769116242,
+            0.9195634037101191
+          ]
+        }
+      ],
+      "sourceShapeSHA256": "b0e1f2b28a6ade6a33c5d8d02b16476d39fee974ac24621b26e82f66e60b2bc6",
+      "nativeDetailSourceSHA256": "76707814f7a817d270368f178836e95aa725ed7c347c62457265a9a65a408888",
+      "bounds": {
+        "min": [
+          -1.850000023841858,
+          -1.649999976158142,
+          -1.524999976158142
+        ],
+        "max": [
+          1.850000023841858,
+          1.649999976158142,
+          1.524999976158142
+        ]
+      },
+      "bytes": 369740,
+      "sha256": "03913115502f19d7af3aa1a08862b67e04cc37dd9716ac38ef55a11a52c1e58f"
+    },
+    {
+      "stage": 5,
+      "name": "5 g",
+      "positions": {
+        "byteOffset": 1106112,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "normals": {
+        "byteOffset": 1229016,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "sourceMacroFacets": 44,
+      "file": "nugget-05.glb",
+      "macroSeedStage": 5,
+      "macroSeedShapeSHA256": "ca8292f081dc8454825c55fa13e56e5b2f94bea7ca7653d9068e4c73e1188220",
+      "sourceLandmarkBlend": 0.14,
+      "secondaryGrooveBlend": 0.11,
+      "targetSmoothingIterations": 5,
+      "localInwardCuts": [
+        {
+          "name": "upper-left",
+          "method": "whole inward halfspace; no spatial falloff",
+          "orientationSampleDirection": [
+            -0.41740647959800287,
+            0.35896957245428246,
+            0.8348129591960057
+          ],
+          "normalTiltDegrees": 14,
+          "supportInsetFromBaseMaximum": 0.17,
+          "intersectionShoulderUnits": 0.025,
+          "modifiedVertexCount": 363,
+          "exactPlanarCoreVertexCountBeforeLaterCuts": 292,
+          "affectedBaseSurfaceArea": 1.3800719360761935,
+          "affectedProjectedExtentXY": [
+            1.1151926033332655,
+            1.0791161411582182
+          ],
+          "maximumInwardDisplacement": 0.18652466091391104,
+          "finalExactPlanarCoreVertexCountBeforeBoundsFit": 274,
+          "finalExactPlanarCoreProjectedExtentXY": [
+            0.92560647163217,
+            0.9896809231567167
+          ]
+        },
+        {
+          "name": "right",
+          "method": "whole inward halfspace; no spatial falloff",
+          "orientationSampleDirection": [
+            0.5015492337639244,
+            0.025942201746409883,
+            0.8647400582136627
+          ],
+          "normalTiltDegrees": 16,
+          "supportInsetFromBaseMaximum": 0.16,
+          "intersectionShoulderUnits": 0.025,
+          "modifiedVertexCount": 547,
+          "exactPlanarCoreVertexCountBeforeLaterCuts": 473,
+          "affectedBaseSurfaceArea": 1.7554141450234348,
+          "affectedProjectedExtentXY": [
+            1.6689441571087404,
+            1.2736085041186287
+          ],
+          "maximumInwardDisplacement": 0.16318223810390278,
+          "finalExactPlanarCoreVertexCountBeforeBoundsFit": 422,
+          "finalExactPlanarCoreProjectedExtentXY": [
+            1.5242219781490989,
+            1.0708588984621303
+          ]
+        },
+        {
+          "name": "lower",
+          "method": "whole inward halfspace; no spatial falloff",
+          "orientationSampleDirection": [
+            0.04245681684272231,
+            -0.5264645288497566,
+            0.8491363368544461
+          ],
+          "normalTiltDegrees": 12,
+          "supportInsetFromBaseMaximum": 0.14,
+          "intersectionShoulderUnits": 0.025,
+          "modifiedVertexCount": 434,
+          "exactPlanarCoreVertexCountBeforeLaterCuts": 330,
+          "affectedBaseSurfaceArea": 1.5137664911001223,
+          "affectedProjectedExtentXY": [
+            1.8503745533426352,
+            0.8584555287012396
+          ],
+          "maximumInwardDisplacement": 0.1407049126959969,
+          "finalExactPlanarCoreVertexCountBeforeBoundsFit": 330,
+          "finalExactPlanarCoreProjectedExtentXY": [
+            1.6369957129350243,
+            0.7663097572755799
+          ]
+        }
+      ],
+      "sourceShapeSHA256": "ca8292f081dc8454825c55fa13e56e5b2f94bea7ca7653d9068e4c73e1188220",
+      "nativeDetailSourceSHA256": "76707814f7a817d270368f178836e95aa725ed7c347c62457265a9a65a408888",
+      "bounds": {
+        "min": [
+          -1.850000023841858,
+          -1.649999976158142,
+          -1.524999976158142
+        ],
+        "max": [
+          1.850000023841858,
+          1.649999976158142,
+          1.524999976158142
+        ]
+      },
+      "bytes": 369740,
+      "sha256": "b745420b4476a88b58614a1215c44889c0ef08a9bb9cbe58fc028692d2ba27cd"
+    },
+    {
+      "stage": 6,
+      "name": "6 g",
+      "positions": {
+        "byteOffset": 1351920,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "normals": {
+        "byteOffset": 1474824,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "sourceMacroFacets": 74,
+      "file": "nugget-06.glb",
+      "macroSeedStage": 6,
+      "macroSeedShapeSHA256": "f77016b9ae6bd0cd79cb6c9985ff88085fa82936002a5435e41cf09f92c4576d",
+      "sourceLandmarkBlend": 0.22,
+      "secondaryGrooveBlend": 0.18,
+      "targetSmoothingIterations": 4,
+      "localInwardCuts": [
+        {
+          "name": "upper-left",
+          "method": "whole inward halfspace; no spatial falloff",
+          "orientationSampleDirection": [
+            -0.41740647959800287,
+            0.35896957245428246,
+            0.8348129591960057
+          ],
+          "normalTiltDegrees": 14,
+          "supportInsetFromBaseMaximum": 0.18,
+          "intersectionShoulderUnits": 0.025,
+          "modifiedVertexCount": 476,
+          "exactPlanarCoreVertexCountBeforeLaterCuts": 368,
+          "affectedBaseSurfaceArea": 1.5562678357310074,
+          "affectedProjectedExtentXY": [
+            1.1600547783676092,
+            1.4890800296947038
+          ],
+          "maximumInwardDisplacement": 0.20768793259883037,
+          "finalExactPlanarCoreVertexCountBeforeBoundsFit": 351,
+          "finalExactPlanarCoreProjectedExtentXY": [
+            1.006886713543816,
+            1.2288270397008119
+          ]
+        },
+        {
+          "name": "right",
+          "method": "whole inward halfspace; no spatial falloff",
+          "orientationSampleDirection": [
+            0.5015492337639244,
+            0.025942201746409883,
+            0.8647400582136627
+          ],
+          "normalTiltDegrees": 16,
+          "supportInsetFromBaseMaximum": 0.17,
+          "intersectionShoulderUnits": 0.025,
+          "modifiedVertexCount": 309,
+          "exactPlanarCoreVertexCountBeforeLaterCuts": 217,
+          "affectedBaseSurfaceArea": 0.9263421194632375,
+          "affectedProjectedExtentXY": [
+            1.3025092193846421,
+            1.1793094795995398
+          ],
+          "maximumInwardDisplacement": 0.1714305743726093,
+          "finalExactPlanarCoreVertexCountBeforeBoundsFit": 215,
+          "finalExactPlanarCoreProjectedExtentXY": [
+            1.0076680610973048,
+            0.9290695551125481
+          ]
+        },
+        {
+          "name": "lower",
+          "method": "whole inward halfspace; no spatial falloff",
+          "orientationSampleDirection": [
+            0.04245681684272231,
+            -0.5264645288497566,
+            0.8491363368544461
+          ],
+          "normalTiltDegrees": 12,
+          "supportInsetFromBaseMaximum": 0.16,
+          "intersectionShoulderUnits": 0.025,
+          "modifiedVertexCount": 573,
+          "exactPlanarCoreVertexCountBeforeLaterCuts": 440,
+          "affectedBaseSurfaceArea": 2.1008592802610755,
+          "affectedProjectedExtentXY": [
+            1.6860430765822552,
+            1.2573520189095886
+          ],
+          "maximumInwardDisplacement": 0.19233497222916687,
+          "finalExactPlanarCoreVertexCountBeforeBoundsFit": 440,
+          "finalExactPlanarCoreProjectedExtentXY": [
+            1.4832549389856267,
+            1.1081819801745492
+          ]
+        },
+        {
+          "name": "lower-left",
+          "method": "whole inward halfspace; no spatial falloff",
+          "orientationSampleDirection": [
+            -0.526961458672973,
+            -0.15056041676370654,
+            0.8364467597983697
+          ],
+          "normalTiltDegrees": 18,
+          "supportInsetFromBaseMaximum": 0.14,
+          "intersectionShoulderUnits": 0.025,
+          "modifiedVertexCount": 404,
+          "exactPlanarCoreVertexCountBeforeLaterCuts": 242,
+          "affectedBaseSurfaceArea": 1.5818404340668917,
+          "affectedProjectedExtentXY": [
+            1.6660064286117606,
+            0.8257288815612457
+          ],
+          "maximumInwardDisplacement": 0.18289593724541964,
+          "finalExactPlanarCoreVertexCountBeforeBoundsFit": 242,
+          "finalExactPlanarCoreProjectedExtentXY": [
+            1.1024594572563604,
+            0.7123454130732377
+          ]
+        }
+      ],
+      "sourceShapeSHA256": "f77016b9ae6bd0cd79cb6c9985ff88085fa82936002a5435e41cf09f92c4576d",
+      "nativeDetailSourceSHA256": "76707814f7a817d270368f178836e95aa725ed7c347c62457265a9a65a408888",
+      "bounds": {
+        "min": [
+          -1.850000023841858,
+          -1.649999976158142,
+          -1.524999976158142
+        ],
+        "max": [
+          1.850000023841858,
+          1.649999976158142,
+          1.524999976158142
+        ]
+      },
+      "bytes": 369740,
+      "sha256": "43dd12ea07a4db6312705d66d1cedcb3fdea04e71657ecf9f49602ff01918c51"
+    },
+    {
+      "stage": 7,
+      "name": "7 g",
+      "positions": {
+        "byteOffset": 1597728,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "normals": {
+        "byteOffset": 1720632,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "sourceMacroFacets": 126,
+      "file": "nugget-07.glb",
+      "macroSeedStage": 7,
+      "macroSeedShapeSHA256": "fc47f9103b1cf7a3ed918d1d50caf986c81d8f89e0704e4be4d42c6e473cc210",
+      "sourceLandmarkBlend": 0.3,
+      "secondaryGrooveBlend": 0.28,
+      "targetSmoothingIterations": 4,
+      "localInwardCuts": [
+        {
+          "name": "upper-left",
+          "method": "whole inward halfspace; no spatial falloff",
+          "orientationSampleDirection": [
+            -0.41740647959800287,
+            0.35896957245428246,
+            0.8348129591960057
+          ],
+          "normalTiltDegrees": 14,
+          "supportInsetFromBaseMaximum": 0.18,
+          "intersectionShoulderUnits": 0.025,
+          "modifiedVertexCount": 305,
+          "exactPlanarCoreVertexCountBeforeLaterCuts": 241,
+          "affectedBaseSurfaceArea": 1.182493971077966,
+          "affectedProjectedExtentXY": [
+            0.9783357269912092,
+            1.3270300161914215
+          ],
+          "maximumInwardDisplacement": 0.21933239929665366,
+          "finalExactPlanarCoreVertexCountBeforeBoundsFit": 236,
+          "finalExactPlanarCoreProjectedExtentXY": [
+            0.8562339582818476,
+            1.1575260513681707
+          ]
+        },
+        {
+          "name": "right",
+          "method": "whole inward halfspace; no spatial falloff",
+          "orientationSampleDirection": [
+            0.5015492337639244,
+            0.025942201746409883,
+            0.8647400582136627
+          ],
+          "normalTiltDegrees": 16,
+          "supportInsetFromBaseMaximum": 0.17,
+          "intersectionShoulderUnits": 0.025,
+          "modifiedVertexCount": 229,
+          "exactPlanarCoreVertexCountBeforeLaterCuts": 181,
+          "affectedBaseSurfaceArea": 0.717246013953518,
+          "affectedProjectedExtentXY": [
+            0.9968584672391789,
+            0.9324024984748552
+          ],
+          "maximumInwardDisplacement": 0.1730168016044137,
+          "finalExactPlanarCoreVertexCountBeforeBoundsFit": 181,
+          "finalExactPlanarCoreProjectedExtentXY": [
+            0.8821970610145032,
+            0.8267069745127162
+          ]
+        },
+        {
+          "name": "lower",
+          "method": "whole inward halfspace; no spatial falloff",
+          "orientationSampleDirection": [
+            0.04245681684272231,
+            -0.5264645288497566,
+            0.8491363368544461
+          ],
+          "normalTiltDegrees": 12,
+          "supportInsetFromBaseMaximum": 0.16,
+          "intersectionShoulderUnits": 0.025,
+          "modifiedVertexCount": 163,
+          "exactPlanarCoreVertexCountBeforeLaterCuts": 125,
+          "affectedBaseSurfaceArea": 0.7876513174366891,
+          "affectedProjectedExtentXY": [
+            0.8359343377692425,
+            0.7416079362939149
+          ],
+          "maximumInwardDisplacement": 0.18734402600522318,
+          "finalExactPlanarCoreVertexCountBeforeBoundsFit": 125,
+          "finalExactPlanarCoreProjectedExtentXY": [
+            0.7490122615182208,
+            0.6255209923470737
+          ]
+        },
+        {
+          "name": "lower-left",
+          "method": "whole inward halfspace; no spatial falloff",
+          "orientationSampleDirection": [
+            -0.526961458672973,
+            -0.15056041676370654,
+            0.8364467597983697
+          ],
+          "normalTiltDegrees": 18,
+          "supportInsetFromBaseMaximum": 0.14,
+          "intersectionShoulderUnits": 0.025,
+          "modifiedVertexCount": 186,
+          "exactPlanarCoreVertexCountBeforeLaterCuts": 130,
+          "affectedBaseSurfaceArea": 0.9880697553111266,
+          "affectedProjectedExtentXY": [
+            1.0572233544431908,
+            0.7219543175113857
+          ],
+          "maximumInwardDisplacement": 0.17530917144247968,
+          "finalExactPlanarCoreVertexCountBeforeBoundsFit": 130,
+          "finalExactPlanarCoreProjectedExtentXY": [
+            0.8589980014841495,
+            0.6142793916680094
+          ]
+        }
+      ],
+      "sourceShapeSHA256": "fc47f9103b1cf7a3ed918d1d50caf986c81d8f89e0704e4be4d42c6e473cc210",
+      "nativeDetailSourceSHA256": "76707814f7a817d270368f178836e95aa725ed7c347c62457265a9a65a408888",
+      "bounds": {
+        "min": [
+          -1.850000023841858,
+          -1.649999976158142,
+          -1.524999976158142
+        ],
+        "max": [
+          1.850000023841858,
+          1.649999976158142,
+          1.524999976158142
+        ]
+      },
+      "bytes": 369740,
+      "sha256": "3286d9396eb11861a513bd1d57d147c31b797b0c77aad7b048b4f11f0843b744"
+    },
+    {
+      "stage": 8,
+      "name": "8 g",
+      "positions": {
+        "byteOffset": 1843536,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "normals": {
+        "byteOffset": 1966440,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "sourceMacroFacets": 320,
+      "file": "nugget-08.glb",
+      "macroSeedStage": 7,
+      "macroSeedShapeSHA256": "fc47f9103b1cf7a3ed918d1d50caf986c81d8f89e0704e4be4d42c6e473cc210",
+      "sourceLandmarkBlend": 0.85,
+      "secondaryGrooveBlend": 0.45,
+      "targetSmoothingIterations": 7,
+      "localInwardCuts": [],
+      "sourceShapeSHA256": "26a698f6b0c6c584a3be22c7b39cb2d0fbc14ce6913c86ab2c49fade6e14b68f",
+      "nativeDetailSourceSHA256": "76707814f7a817d270368f178836e95aa725ed7c347c62457265a9a65a408888",
+      "bounds": {
+        "min": [
+          -1.850000023841858,
+          -1.649999976158142,
+          -1.524999976158142
+        ],
+        "max": [
+          1.850000023841858,
+          1.649999976158142,
+          1.524999976158142
+        ]
+      },
+      "bytes": 369740,
+      "sha256": "5d28b0fade69c73f29e4c0b8a9781b106fe993336d5bb96fb59d18260255c0ff"
+    },
+    {
+      "stage": 9,
+      "name": "9 g",
+      "positions": {
+        "byteOffset": 2089344,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "normals": {
+        "byteOffset": 2212248,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "sourceMacroFacets": 966,
+      "file": "nugget-09.glb",
+      "macroSeedStage": 7,
+      "macroSeedShapeSHA256": "fc47f9103b1cf7a3ed918d1d50caf986c81d8f89e0704e4be4d42c6e473cc210",
+      "sourceLandmarkBlend": 0.94,
+      "secondaryGrooveBlend": 0.65,
+      "targetSmoothingIterations": 7,
+      "localInwardCuts": [],
+      "sourceShapeSHA256": "f979e1ff532bf224030e98d24a9e607df04eb3bb6916aa30507c02ba030da2b0",
+      "nativeDetailSourceSHA256": "76707814f7a817d270368f178836e95aa725ed7c347c62457265a9a65a408888",
+      "bounds": {
+        "min": [
+          -1.850000023841858,
+          -1.649999976158142,
+          -1.524999976158142
+        ],
+        "max": [
+          1.850000023841858,
+          1.649999976158142,
+          1.524999976158142
+        ]
+      },
+      "bytes": 369740,
+      "sha256": "d35c01c155d45ba3d1c45d10946fa5aa0becafe1cbc66c8e74e988b676d96ee0"
+    },
+    {
+      "stage": 10,
+      "name": "10 g",
+      "positions": {
+        "byteOffset": 2335152,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "normals": {
+        "byteOffset": 2458056,
+        "count": 30726,
+        "componentType": "float32"
+      },
+      "sourceMacroFacets": 12912,
+      "file": "nugget-10.glb",
+      "macroSeedStage": 7,
+      "macroSeedShapeSHA256": "fc47f9103b1cf7a3ed918d1d50caf986c81d8f89e0704e4be4d42c6e473cc210",
+      "sourceLandmarkBlend": 1,
+      "secondaryGrooveBlend": 1,
+      "targetSmoothingIterations": 7,
+      "localInwardCuts": [],
+      "sourceShapeSHA256": "76707814f7a817d270368f178836e95aa725ed7c347c62457265a9a65a408888",
+      "nativeDetailSourceSHA256": "76707814f7a817d270368f178836e95aa725ed7c347c62457265a9a65a408888",
+      "bounds": {
+        "min": [
+          -1.850000023841858,
+          -1.649999976158142,
+          -1.524999976158142
+        ],
+        "max": [
+          1.850000023841858,
+          1.649999976158142,
+          1.524999976158142
+        ]
+      },
+      "bytes": 369740,
+      "sha256": "513d2cdcbf3ab5c3c47bb98b2de7a32f826a21e84b0c69eee780c1030b5213b1"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'T-Sans';
+  src: url('/fonts/oms-sans-bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'T-Sans';
+  src: url('/fonts/oms-sans-medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Landing Hero Body';
+  src: url('/fonts/oms-body-regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --ink: rgba(0, 0, 0, .8);
+  --muted: rgba(0, 0, 0, .54);
+  --soft: rgba(36, 74, 127, .06);
+  --soft-hover: rgba(36, 74, 127, .09);
+  --blue: #126df7;
+  --yellow: #ffdd2d;
+  --radius: 24px;
+  --background: #fff;
+  --foreground: #333;
+  --muted-foreground: rgba(0, 0, 0, .54);
+  --border: rgba(0, 0, 0, .08);
+  --ring: rgba(18, 109, 247, .45);
+  --primary: #ffdd2d;
+  --primary-foreground: #333;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #fff;
+  color: var(--ink);
+  font-family: 'Neue Haas Unica W1G', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+button, input { font: inherit; }
+a { color: inherit; text-decoration: none; }
+.oms-page button:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }

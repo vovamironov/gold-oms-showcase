@@ -1,0 +1,18 @@
+/* OMS inspection framing. */
+.oms-inspection .oms-inspection-window[open] .bars-inspection-stage{transform:translate(-50%,-50%) scale(var(--oms-inspection-scale,1.8))}
+.oms-inspection .oms-inspection-window .bars-inspection-close[data-slot=button]{--inspection-close-offset:16px;width:32px;height:32px;min-width:32px;padding:8px;background:rgba(255,255,255,.1)}
+.oms-inspection .oms-inspection-window .bars-inspection-close[data-slot=button]:hover{background:rgba(255,255,255,.16)}
+.oms-inspection .oms-inspection-window .bars-inspection-close-icon{width:16px;height:16px;background:rgba(255,255,255,.5);mask:url('/inspection-assets/figma/close-cross.svg') center/16px 16px no-repeat}
+@media(min-width:768px){
+ .oms-inspection .oms-inspection-window[open] .bars-inspection-stage{width:max(var(--inspection-width),var(--inspection-height))}
+}
+@media(max-width:767px){
+ .oms-inspection .oms-inspection-window{
+  --oms-inspection-scale:1.1;
+  --oms-safe-top:env(safe-area-inset-top,0px);
+  --oms-safe-right:env(safe-area-inset-right,0px);
+  --oms-safe-bottom:env(safe-area-inset-bottom,0px);
+  --oms-safe-left:env(safe-area-inset-left,0px);
+ }
+ .oms-inspection .oms-inspection-window[data-inspection-palette=amber]{--inspection-rays-reach:.8}
+}

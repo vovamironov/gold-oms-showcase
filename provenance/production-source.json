@@ -1,0 +1,1073 @@
+{
+  "source": "https://gold-metals.vercel.app/oms",
+  "deploymentId": "dpl_B2CAUjND2r3ZZFjUNN5cSkXikhcX",
+  "buildId": "lAmU61QIj1xCOLehM0mAA",
+  "snapshotDate": "2026-11-25",
+  "scope": [
+    "OMS hero/configurator mobile and desktop",
+    "nugget fullscreen viewer",
+    "OMS account-opening prototype"
+  ],
+  "extractionChanges": [
+    "Standalone route wrapper replaces full landing",
+    "AnimatedBullionPrice extracted unchanged to app/oms/animated-price.tsx; only its import in hero changed",
+    "Only required global and OMS base styles retained; source component styles preserved"
+  ],
+  "files": [
+    {
+      "file": "app/api/gold-prices/route.ts",
+      "sha256": "30f48dffa4529c8e58eeffb5956f8c2e547ab4a7b453ecd12417bba55c889130",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/bars/bullion-inspection-viewer.css",
+      "sha256": "27a50ce08a20e6bbbd6a40d47a6993556b8a3232170cc5f36abae8f84bae324e",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/desktop-product-breadcrumbs.module.css",
+      "sha256": "63887e1e5f7eee8dcbd4cf154a35e63f35650de79ec96593f40e31278837a9b5",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/desktop-product-breadcrumbs.tsx",
+      "sha256": "b04725b9abbe18fecf5cca078756f3e57b708c46ab71314d9f3210f93e944a03",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/gold-price-history.ts",
+      "sha256": "c482586d779316a308a545c578c4af594d2fec1d21a25ed94a799beca9dba3f6",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/hero-inspection-hint.css",
+      "sha256": "60930d32a8c0ad14e49785c04dfd25e550516b78bf7688952ff07db3c7e618ce",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/hero-inspection-hint.tsx",
+      "sha256": "6cf0eadef1a7aff679e96d9d680feb5a48dbc079e1a563ed27ad10d159ecff5e",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/oms/account-flow.css",
+      "sha256": "824c4c4f00b9a9ec534e93bceeea47e2ec0bdec0ec9e7a83e09e80aa816c62a4",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/oms/account-flow.d.ts",
+      "sha256": "986cb4efe0b86b81567799d2555b0b87a487986e00eb91153cedae8012ca2cde",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/oms/account-flow.js",
+      "sha256": "57c0a2f51c9063c966578b08475297b52c6d9a8651a710574e2556d91ea97f14",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/oms/account-opening-dialog.tsx",
+      "sha256": "717c7750666220222e2cedb5454f28b2094f4b21a538efdc557dbe1e4841aacc",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/oms/animated-price.tsx",
+      "sha256": "a0d4a141e2c0ff4e4a565b206f84a3dacaa6855100f9d32dfe03c67ba0e7896b",
+      "matchesProduction": false
+    },
+    {
+      "file": "app/oms/nugget-inspection-geometry.js",
+      "sha256": "d4c13702be0a5571b2ade9847222891a035ba49220e16804b3f2fef7a18452a4",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/oms/nugget-inspection-viewer.css",
+      "sha256": "f9b3e51442b28219917cf187e3ab6390f3408e1968072c83aa6ec39bf67f641e",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/oms/nugget-inspection-viewer.tsx",
+      "sha256": "d57e6b52d80a8ee2d0ca886be1b96384bb7c62b1ef93a19d02b259be127f25ef",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/oms/nugget-viewer.tsx",
+      "sha256": "7e06dba853bf9200ac3f81a17f4c39befcf32e0cfb2b7963ba09098f87ddc542",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/oms/oms-final-hero.css",
+      "sha256": "bc91ecbf8d8cb632a53d010753b8cd2c254af1a44ec7ea38585dd59c806b852f",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/oms/oms-final-hero.tsx",
+      "sha256": "7d7430d02e027f5f57cbc3bba7eb569b0e7c60a8611d4ecd401275971b74c0e1",
+      "matchesProduction": false
+    },
+    {
+      "file": "app/oms/oms-showcase-base.css",
+      "sha256": "766533d8cca6483de572949bca344bb479c0978f8725763f277ba786fae7d8b7",
+      "matchesProduction": false
+    },
+    {
+      "file": "app/oms/oms-weight-slider.css",
+      "sha256": "dee8571f56485ff6dc115402955bfb13f1c0390604d1e15c65515c828f27c61e",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/oms/oms-weight-slider.tsx",
+      "sha256": "a9753a0efe59f0c25f72f4d5ba3c708a819ed965634d6759f772426cfe1103ff",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/product-configurator-link.module.css",
+      "sha256": "f15cd7c46482738a16935882baeaabb26b455f00bb54211803275e3103cd4ca2",
+      "matchesProduction": true
+    },
+    {
+      "file": "app/product-configurator-link.tsx",
+      "sha256": "a36b3d54d7c77fa5dd5b16d0d1b6c6575ef7003d235a9bfdeb46913ec4bc519b",
+      "matchesProduction": true
+    },
+    {
+      "file": "components/ui/breadcrumb.tsx",
+      "sha256": "b28b76d6f8d0feafbbeff2220cf83f9a6b03d8c81f0145b3af4c7d19933ab2c0",
+      "matchesProduction": true
+    },
+    {
+      "file": "components/ui/button.tsx",
+      "sha256": "081d2a1cb4f3aec636a6894d9eff4e90d476d5db85b82d0399c1f4d18517112e",
+      "matchesProduction": true
+    },
+    {
+      "file": "hooks/use-gold-quote.ts",
+      "sha256": "2a0232cb39f377fe62fca666478076d94af6f3c9f39d2fcd6a7efd6d9f98f0c6",
+      "matchesProduction": true
+    },
+    {
+      "file": "hooks/use-viewer-loading.ts",
+      "sha256": "9bd04115f0882725b3f1388163471daba8c283788c9418d5db21f1a42fedaa6f",
+      "matchesProduction": true
+    },
+    {
+      "file": "lib/blur-pointer-button.ts",
+      "sha256": "c4478af49d2767a47a9d8e79b8137654d2aad56e115fe925117ef4c6cbda5ccd",
+      "matchesProduction": true
+    },
+    {
+      "file": "lib/cbr-gold-server.ts",
+      "sha256": "559bd0247f6f219d29cb3e05bb4e2e4700610840e23af39edb6fe5b93c71a14d",
+      "matchesProduction": true
+    },
+    {
+      "file": "lib/cbr-gold.ts",
+      "sha256": "9ecf5e23a3bb8f26fcde0aaac741c604316788f3a9cbe7d78cef17076625b505",
+      "matchesProduction": true
+    },
+    {
+      "file": "lib/gold-account-prices.ts",
+      "sha256": "0cdddfd5fb9244741db834272d620236784bfbba192111f35956949fdc28ef12",
+      "matchesProduction": true
+    },
+    {
+      "file": "lib/inspection-dialog-focus.ts",
+      "sha256": "530a4b1b090ab6cdc13ce14adf5bb0c734d55516b00640f102a628f3f4a9991a",
+      "matchesProduction": true
+    },
+    {
+      "file": "lib/utils.ts",
+      "sha256": "9304a861c8673bee09e0f12de31773abbde503b02e59dfd74763ddec2e37cf05",
+      "matchesProduction": true
+    },
+    {
+      "file": "postcss.config.mjs",
+      "sha256": "4cae941be9bc3bee9a6905e47ea7a51aee216d587d34a8cc4ae48f78fd6d8159",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/bars-assets/inspection/expand.svg",
+      "sha256": "657496e21260d794e1730b1efb5750823fc257aaf6be59685770108cb56964cc",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/bars-assets/inspection/load-error-dark.svg",
+      "sha256": "fee132a27fab8920d36dfa4bf19bff104a04808373a9747fbcc26b9692504c4e",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/bars-assets/modal/close.svg",
+      "sha256": "193e7a6ec89f46f1baad0405b5fe356df561a3138719f1c666a03b4c86414640",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/chart-fonts/neue-haas-unica-regular.ttf",
+      "sha256": "92912eafee147392a16dacf5ca1d2f8f0a3bc4d9978ce7cc7f60cfa164fd2039",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/configurator-assets/tui-slider-knob.svg",
+      "sha256": "4baa6953ca373b1235eb502a418074d87cee8acc767475188b33ca2ce9c182f4",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/fonts/oms-body-regular.ttf",
+      "sha256": "92912eafee147392a16dacf5ca1d2f8f0a3bc4d9978ce7cc7f60cfa164fd2039",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/fonts/oms-sans-bold.ttf",
+      "sha256": "78e532d17596587ce96a23e0b81654f5e73f53ef74269f76f9c3653d4dfa03c4",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/fonts/oms-sans-medium.ttf",
+      "sha256": "9dd46da9532c3fd28c54a317ae11ccaf0e4aa015f8bf0d481f6ac27a0feaebd8",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/gold-scene/entrance-motion.js",
+      "sha256": "c3dc89bcb8a27f6ac2ef0c12349f21230f1162df5cb1f2b99f4c886bac99c775",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/gold-scene/object-touch.js",
+      "sha256": "95a8dacbe07b0dc7ea2385408587c3e6815ad79d32492def48de1b2f3138f857",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/gold-scene/rotation.js",
+      "sha256": "58932869d330561e3bc15808f48e80dd379e1c8fbd64787f8124a4f6c37ffff3",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/hero-lab-v2/chevron.svg",
+      "sha256": "6529de99d56f7cc7fd7b0f04af742727dfc905e6dc43e7b29bf47d850e9fe0a8",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/hero-lab-v2/tui-back-chevron.svg",
+      "sha256": "7b5fceb8a15746e6d37c22f816fc6a926143c191bebfe60be8467e8c6b11b69f",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/inspection-assets/figma/close-cross.svg",
+      "sha256": "0ae5219d9f1087e61df3b69b7ed52eff169ac8af8a1df233575acb07b0e68e0c",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/inspection-effects/background.js",
+      "sha256": "99cae6dfa4b1320007ddc077bae852a5d67888ba769b631c72ae60c328b1faf3",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/inspection-effects/dust.html",
+      "sha256": "4d7288440f20997aee439b93bf908cfe9c31662d2b8cc2843e527cb0e7214c0a",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/inspection-effects/dust.js",
+      "sha256": "24161363a6350ecf6591d7968c6cf5efdd5eb1b839e8242b130f5f4ebaa0e077",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/inspection-effects/gold-rays.js",
+      "sha256": "20f7a379760035ceae911c6d36ed72a2cf61dacf935d41ba5af4a3ec1802be73",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/inspection-effects/inspection-grain.css",
+      "sha256": "d297a5608b216bb9c674afd421487a4dba0333e59ac444fef5e81a446e0be9b0",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/inspection-effects/inspection-grain.png",
+      "sha256": "b1c12dda62c2effd611c8bc17c7da5811a3bde3b598dfa7c3aaf965d9251757a",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/inspection-effects/viewer-settings.js",
+      "sha256": "04cab4b1987abf681616897ad4443bf99b7a19fcbdaa58020972a42992675068",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/inspection-effects/visual-settings.js",
+      "sha256": "9baa2e99d13da680693d3f9fdd7551ef3a4635ccc2fe444b362d83748253fcf7",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/inspection-effects/wind-motion.js",
+      "sha256": "74e4e6c5134b8e929fbf51ca3c1b392131a139385f2654afa7e02647e1f60e36",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-account/benefit-exchange-desktop.svg",
+      "sha256": "14da9b5b94da94a8c951f269487d7dd2de2d3bceca8b206491ddc1216cdc965d",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-account/benefit-exchange.svg",
+      "sha256": "cc27dc2fecab973e28b88a13c50f0767c7a20966813473f4e646cbb0f0975c43",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-account/benefit-gold-desktop.svg",
+      "sha256": "1a3ac2c466ee792f84a5478104312786593b43eac3b7f89d48dc1a0c85c27577",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-account/benefit-gold.svg",
+      "sha256": "d118375bdc53b8651ae226963163b9f80f638821c7b4a1dc3bcf30ffc9de1b91",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-account/benefit-percent.svg",
+      "sha256": "dd50bb49a6f25f39b603eb9548551e881fd152065b33b2898d66aac0048025a2",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-account/card-cross.svg",
+      "sha256": "96b4cb2473d610f21490d9d545edfcf72b77d62e90b36970680dfd59d5ccfa16",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-account/cards.svg",
+      "sha256": "4cd386eb6a96bee0ec9d8d0a3275902dfe61a6135312c80f82c3c70648f28fbb",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-account/chat-check.svg",
+      "sha256": "53701046ddcd549c7567cab7a97e3c49d8ef16ba094b3408f82d84eff07061fb",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-account/close-ios26.svg",
+      "sha256": "5d2e48ef5f35220f2dec1f2912d25ca33d46fc7f40247a9609badf549fe36b9d",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-account/close.svg",
+      "sha256": "0ae5219d9f1087e61df3b69b7ed52eff169ac8af8a1df233575acb07b0e68e0c",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-account/footer-fade.svg",
+      "sha256": "4f6ed7449930bb401176015c7be230a0086148298baf130f0c9760b1df86d8a6",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-account/gold-cross.svg",
+      "sha256": "6af17263c5e49fe24c5c14374083aea57e79dec352f12e3ece7352c0406d804f",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-account/thumb-up.svg",
+      "sha256": "a97de6265af2850a0c1d09b0b9ff2a36f30b36184cb8849905a4d64aa8c4298c",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/fonts/T-Sans_Bold.woff2",
+      "sha256": "cbe9c743d02ad9eb1422b3bb48bfdeaa062317430c7cc0740c01f2dda7218599",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/fonts/T-Sans_Medium.woff2",
+      "sha256": "19cf6f5fb5dff191fc5f6760527ddee1443dcccf6de30eed46c6800c8a36e9a5",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/fonts/T-Sans_Regular.woff2",
+      "sha256": "79ab384fac56d055e2474d88499bed84449d0e625bacde87171ed805ae2b0bc4",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/manifest.json",
+      "sha256": "c64f3a9d7c2dcb648879ccda1b355ad809ca998dcc3b8a61434e7880b1cb602d",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-001.webp",
+      "sha256": "8e32d0a40d4f91daeb01f46822e0b112dd59dc21150e4673da3db0c0a1e1540a",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-002.webp",
+      "sha256": "2164f2890b48d734734e723b239d5204b10f9ef655b9c9dd47642286107a5361",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-003.webp",
+      "sha256": "4ffbc7f9ac2387fca5577eff5a0bf93a64de1d171360c41ca2945e6402596f16",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-004.webp",
+      "sha256": "df63a48c6c1dc7aa5f023008a642307db3cd2c97b7bb6262bb4dc3f55db40249",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-005.webp",
+      "sha256": "3c9d2d03fc1010b2d87fcde988ea9d17d86e9a236d0f0cd75a77a91a0a1c58f1",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-006.webp",
+      "sha256": "d90e559f6dfee4311ccd3afa8d24af3458618c066c2391328b5533c88edc9e87",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-007.webp",
+      "sha256": "d655b247958687db074fb77219996fe43c0d6f5cee9ef1416149314795f3de73",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-008.webp",
+      "sha256": "fc7b420eccd04cc8893639185859b6315e8864a8b12b7923360a8ed51527523c",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-009.webp",
+      "sha256": "d99c5707d8810f07bfced640e4d0f98ef0bb9e5fa5c5863dd71f2860f4c20061",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-010.webp",
+      "sha256": "b9d298743f33d15124ef010bf30bdd71b37b6488549d95040bd8bfdc2af92f1f",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-011.webp",
+      "sha256": "ea34f87d7f3e787e82caa861afb02873963b1c71c022c33bd0b4b187b6b0078d",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-012.webp",
+      "sha256": "c33d7388674c2eedba2d6edcf8339af74215b0a4500a797e01bce4988e3dc52f",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-013.webp",
+      "sha256": "739ada2f4544e2764986bdc7766e1bb15cef6fb1f02d87373e8dec90d2edf601",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-014.webp",
+      "sha256": "73f9a825a261a6b1beade37a3b8ee50f9785bad5c7a9b4714bf95db200311659",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-015.webp",
+      "sha256": "4e97033540df2b5aa1efe4e1c8447ef974cd0be0a05cac1e0cf089e5c86e9048",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-016.webp",
+      "sha256": "c10e624b3b79f256a681153f417540ef447b0c4d11a6a6be379925d078d76af2",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-017.webp",
+      "sha256": "dc5a8462d5337764cfa2e527330aa649984eeacbf07487ccc44a4e7df556f980",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-018.webp",
+      "sha256": "948272d805baddd82fdee52ee13f8abf58e5122369974bfbdef7d25c7064d48a",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-019.webp",
+      "sha256": "ef0c72eed65912b9860ffb1bafc1a6849c382ce289210bc209f317633eb77315",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-020.webp",
+      "sha256": "9d0fb0e47601d94cb835e4753b3c7ecf75301acb9476a8ed0baa40d973f4a031",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-021.webp",
+      "sha256": "b195eb31cd488e63b3cbf860bf961695b1c45f3f14df856e711d949664ae9baf",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-022.webp",
+      "sha256": "30b11c4a41bbf1f154d68ac44426394d88a5a8aa927689129e63319827f724ce",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-023.webp",
+      "sha256": "352ec11b40c7aeb752c81e0b7d9aa3ee2b661ab306e42f74831dab96ef88b160",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-024.webp",
+      "sha256": "b743a3639cc8f471044f727c0d0e87ef143045ecc976196f892b4831d431672f",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-025.webp",
+      "sha256": "b92c031363b78cd5215902cdf5dc091a28e9edf486fed393d71ce37558120f68",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-026.webp",
+      "sha256": "618f0aca472af158f5dbae384c8e179c076787f856ec584148ba3937c48b5667",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-027.webp",
+      "sha256": "68d9d8d1082bd97d446228c248f0d7dc0f87711350d3ad2b4f8e24f2d35e8d8d",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-028.webp",
+      "sha256": "ec296aa3e218e810d1d8c1be3aea6974f4a8691f956203eb6a5731b4c0f7c6b4",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-029.webp",
+      "sha256": "51466640a7aa6eb5a1812533fbc7f97e6fe92c4e90ddf34df9a78dcc78ac8f24",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-030.webp",
+      "sha256": "8b4335422c40ee1c06e9afc90368e721121b5e94eaf79193c65aa89407a54b1e",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-031.webp",
+      "sha256": "07b4808801909838ce26a147cc78a88be0fdc8c89cdeb453cacbbd1e5390a6ed",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-032.webp",
+      "sha256": "0028918ddb8b0fcdfbff39386c2d29b0167a70ae4e98c215b7cd272b31fad54c",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-033.webp",
+      "sha256": "7988b9f7bf57d7b1a5783a889493cf3bc88c92f5e54f20b557cd268c327b4a3e",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-034.webp",
+      "sha256": "16cbae17274ba3c3e74eeec0718d81d2e962f56bd9a373bcd95acd7a8c618a08",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-035.webp",
+      "sha256": "b4bee0ff5d0051d3742bda32858b309c749b7a264a3f18de88509f205fb5f4ce",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-036.webp",
+      "sha256": "1bdf786731ccbeab7439b736b05a8a3c61274828e5e59e7bcb6cf263c2b55856",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-037.webp",
+      "sha256": "fdeddde321363567e7238fddc01ba8f7f7cc66babe0c3de789c873550f41822c",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-038.webp",
+      "sha256": "14074529f2bf45fa29111a488d730aa95e02a151eeb792fb4f03b9b0f2cb71a7",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-039.webp",
+      "sha256": "8a671262bfcc87d87c266a81970656de2527fedeee998685b182c5b96b5eb86d",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-040.webp",
+      "sha256": "9a83e47b6320f56a3db54726b536aa6a134613c840278e1136f6fd02a53ab8ef",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-041.webp",
+      "sha256": "ed6d3ac32f680328fdecac7b119110972c96a2e225d5580945f99ff3d01c99e6",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-042.webp",
+      "sha256": "638a13c578e80c250fc6fcd8f398e4da8d42cc1864a815d8abe3b5f4e8e53d0f",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-043.webp",
+      "sha256": "991ecacf40e82e023d00ba9d1ce917eed85d282700e484f8ae8445f0478126ef",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-044.webp",
+      "sha256": "19ff2e34644363ae4ee21ea71644e55852b544691fb727396544e43d3fc5caa8",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-045.webp",
+      "sha256": "5ecd5f57d51ddd0cbf15fd7cb0283bdad0f49713343b8ce8a091ef3d586efa50",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-046.webp",
+      "sha256": "35f0ddcbb7b2a675da096561dfad4a7cf8e00c6718740e030fd952f07bb5bf9c",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-047.webp",
+      "sha256": "8d8d1b500dcae21e57d6b5d085e99495eb894da48aa690045e42ac755d394e0a",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-048.webp",
+      "sha256": "8756cbdc8689f0aaa4eaad3154e3d4ecb3e3fe4d3c24fb8ed87015e19e8bc223",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-049.webp",
+      "sha256": "f8f624d58729e9f706d38358cf1facea49908a3506a219bffd013bebb9fbe298",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-050.webp",
+      "sha256": "9071e91c835c81df57cf521f01b0d2d64a66cfed4e60af76f92512bb48f7c5a6",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-051.webp",
+      "sha256": "dd9766fcdea9d1d9540d8201d8613ec6900d0e81a6b16e62596026fccab242d4",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-052.webp",
+      "sha256": "9850ce5d60d25e6107c85b58fbdb1fceca23cc6b799ddc684aa4b64f7632abdb",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-053.webp",
+      "sha256": "7b4f8093f83400eadf3d1a351a558111770684ef7b53f5a355e5a091f23b4ec3",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-054.webp",
+      "sha256": "4556ab4cb56bfd473da783857e65bd43c0663ced84526c6c707c1a10b892e3ed",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-055.webp",
+      "sha256": "888a4b412ca1f91a55c01ef22d727cf3bfbb8cc1e55f4fcff21fac6781b1a086",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-056.webp",
+      "sha256": "0e116db01d289ebff8607a38b7a3902882f12faeb863161c8d0aa0d414327125",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-057.webp",
+      "sha256": "06f180fe37b725d177a7c71090c197aced1f5d4635c44d9a90a8d94e39aeb568",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-058.webp",
+      "sha256": "a8b22e5e74238d8c1e0416c3de5f7c21962e4f20fc755c09ce8f0fe9de1821ef",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-059.webp",
+      "sha256": "45a4e012384ab031d227247b6549deaf48b0aa3ff941ad0120916c81c4d833aa",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-060.webp",
+      "sha256": "8d20897a1cd8b73389a48e079721e2c5cc5fa8291db5be29e3259dccc0160ac0",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-061.webp",
+      "sha256": "1cf8f8353f296e9a630b6a59bc7ea7d0f7ca6486f113efaf7f5064858f23e257",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-062.webp",
+      "sha256": "d44a428a2a17cf75b67cc7d813defbac19b1b9a8b3308578bca4132d122e5049",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-063.webp",
+      "sha256": "3f7868fdc9e7038953d0300215f04ed67dbabd1dc0f6fb9becd97149754a9900",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-064.webp",
+      "sha256": "47d64626741fca3ea0fe4bfbc0ab180b07f5e1406581a4f7b170242ab45c5586",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-065.webp",
+      "sha256": "e47706d9446ded252bc7958409d4ccb1fce73e6b4f08f424dd851ee3d6b96e64",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-066.webp",
+      "sha256": "d1d4bb6b29cdce5abffe602585b7d90068c98ed42b71e7121635039b5ddcb1d1",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-067.webp",
+      "sha256": "c2aed4038170d12c7fd0adb1d671d18ba5f337f7450fbd590d9a1bc62e4d6479",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-068.webp",
+      "sha256": "c945fc3a05c660421a2052c10b67a87f7ce0162f7229e808e173ab532d585589",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-069.webp",
+      "sha256": "b287e7bb9eccce7995809e8a52db9b93ad60572d0e0a3d160a86f752bcda0abe",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-070.webp",
+      "sha256": "74edfcf1acfb01aa37b89670207ee9d1f60d299112ae784612aa14dce7d20f3c",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-071.webp",
+      "sha256": "8146ed2b4ae38091fd75912de13ed66f19f0ea472d19f4554fedd65c26112238",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-072.webp",
+      "sha256": "2c870ef71feabd3a2a93122141f536ec0317e0e852cea38f88eb9a2cd4751e21",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-073.webp",
+      "sha256": "749791a6c97a1c00fd56788a21d619776a6ca574f6fbb803ed77cff80e75a378",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-074.webp",
+      "sha256": "908784e2893541c62660e9b33bdd0f271a8f31153f8636b5cc9ae2cda39c0765",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-075.webp",
+      "sha256": "9ac263eac465c4f1bcea74791cd5320f0bb152cf4d8bd4090aa705dcc4ea894f",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-076.webp",
+      "sha256": "874a6eeb5b831dfe9a703ecaad340392ab930826499d38fc6233c072f9b00c08",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-077.webp",
+      "sha256": "1cb00f6568dbfef70f4ab30579cc102b56eba7d6177bd1041fcfdede38b957cd",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-078.webp",
+      "sha256": "f213da5534c29f1e7da67e56abcd611bef31cc5c5b3b1edd24de80c6814d26a7",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-079.webp",
+      "sha256": "dc1ac9cb0b3a7bbe4a952982347e42adacc0c58b5f9555518b8556fc24830883",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-080.webp",
+      "sha256": "c3682e2eccb805f5d86e109cad4fe746ade3448c520a89ea3baf729892815894",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-081.webp",
+      "sha256": "40dad3814a80def0c5b819b29409f1cc98be0fb9451b8ff32c0faad7f41b0e1f",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-082.webp",
+      "sha256": "24c1c4b0df0ca2a5936dc1bc8a4439d26ddbee31156bc451c4f75a95d5597854",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-083.webp",
+      "sha256": "8adabcb29985419160ed1d588dd092e4cbfd55605f960653e25885ba5da26e77",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-084.webp",
+      "sha256": "ddbd2edbe0e53411a8872821b44dd439aa72916a1c05a2789e84c83bafd7673a",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-085.webp",
+      "sha256": "3ebb1720fc1fc82f64a46746ece67b76d9a0afaee2d65ac8ed31087deb3f06a5",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-086.webp",
+      "sha256": "23ac52ff955ea8170b4b8a07b71d93ad63ac42cc0a909e699944a36360f0aa67",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-087.webp",
+      "sha256": "aa8cbd2f522e8937966e56e7529e44df2f7dd74896a43826f2bb17a62465138a",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-088.webp",
+      "sha256": "c6853daae84d0027061535777804ff84e63d0f775d85707750848dd52062de97",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-089.webp",
+      "sha256": "1bcce783b83e2cb91b229cd6079d459b1bcac531be1cde8e6ef9c83d003e2ca1",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-090.webp",
+      "sha256": "4dda67faaaf46837b767442b2bb278c0c5b2ed0f880d70dabe43d254a17d0639",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-091.webp",
+      "sha256": "4706ed7efadbe7190a55167a85f184c557bffdf7dcf1454433061dbdedb45efc",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-092.webp",
+      "sha256": "302a715a62c1472aa41a1b1f3050ac4263a7ba5def13b779c806372ea6808384",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-093.webp",
+      "sha256": "302f8244d932458a4eca8ebc54a0ffeb94664c71d37ddf1163b257624492daff",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-094.webp",
+      "sha256": "66f254c2d4eb3f8eba2e7e1d2550124db1ec2d82301d616b864931e55eceff87",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-095.webp",
+      "sha256": "ac279eccf753dc7fd75750f4df78c6ca933b978a992eee9ff4fde4f84c0fd233",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-096.webp",
+      "sha256": "020a36bb816e84ab0c601838a298c0dce87c858db39e68e2a690cfa8040a9c3a",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-097.webp",
+      "sha256": "7afe85291c00310a4e314d7e6d69b6228851d4c1e884c9fd36c8fc8e9ded50a5",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-098.webp",
+      "sha256": "760b79799f5c55669943338ec09bddcc354624cd28555f4bf537a5bb8ed2a61e",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-099.webp",
+      "sha256": "0fe181249aa3966b4326c8a5f3bf64fc622ff6137de477467f273f23b6846309",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/static-weights/weight-100.webp",
+      "sha256": "72fd73de04fa08e12b3c6731ef0ca8f6a3e36c39590a0be778f9922b662b76d8",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab/tui-loader.svg",
+      "sha256": "6d8c7c75614ab1ccaa4a052dae0e8140dbc64c14f3a3372492121b3f3dfaf754",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab-v2/nugget-growth.js",
+      "sha256": "4f21a2e181457e39ca9a7e445bf211a8593a61c140c23aef1f22b15e27a0a5aa",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-hero-lab-v2/weight-scale.js",
+      "sha256": "457753c5269b3fb14beb47214fe2a581a38e260932c494d9e4947865732d838f",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget/morph-manifest.json",
+      "sha256": "475ea3f127591d2c6613555a6d42327cc53459f2bf9f21b7bfc8d47eb26a1b30",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget/nugget-01.glb",
+      "sha256": "a0414b0eb1afd254a2914b37b8b75f239388c2e9f41d8e976036e72f8a5add9a",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget/nugget-02.glb",
+      "sha256": "bd6c924f40b111232ea0e4de5a46ae27cef088444190910dc20452febd6d9453",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget/nugget-03.glb",
+      "sha256": "bbec5f55a393356215523da929d3edbcc6711b04a5e47ccdb58c878f3d9c0fc1",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget/nugget-04.glb",
+      "sha256": "03913115502f19d7af3aa1a08862b67e04cc37dd9716ac38ef55a11a52c1e58f",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget/nugget-05.glb",
+      "sha256": "b745420b4476a88b58614a1215c44889c0ef08a9bb9cbe58fc028692d2ba27cd",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget/nugget-06.glb",
+      "sha256": "43dd12ea07a4db6312705d66d1cedcb3fdea04e71657ecf9f49602ff01918c51",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget/nugget-07.glb",
+      "sha256": "3286d9396eb11861a513bd1d57d147c31b797b0c77aad7b048b4f11f0843b744",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget/nugget-08.glb",
+      "sha256": "5d28b0fade69c73f29e4c0b8a9781b106fe993336d5bb96fb59d18260255c0ff",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget/nugget-09.glb",
+      "sha256": "d35c01c155d45ba3d1c45d10946fa5aa0becafe1cbc66c8e74e988b676d96ee0",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget/nugget-10.glb",
+      "sha256": "513d2cdcbf3ab5c3c47bb98b2de7a32f826a21e84b0c69eee780c1030b5213b1",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget/nugget-morph.bin",
+      "sha256": "95b8f52a90cb374b7ab2b2b6c163b43d7a2debe6896b5164269ef6e0237c419c",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget-viewer/display-scale.js",
+      "sha256": "7686ea3113ade3df5ef7e2903ec696f17153678e51a1ea07dcff3775bbc2c67a",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget-viewer/gold-material.js",
+      "sha256": "c6b06f7391be670856d4bbeebe9f1bd5eb926a29136ffd1534f98bba3f92f73c",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget-viewer/index.html",
+      "sha256": "c9c368980a4d91934bcaff6ac3025e62b32a3dc896931bcd497eb409c7b4cd22",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget-viewer/inspection-fit.js",
+      "sha256": "0400d2eabfde3010e7f65ce2bb7d2296739c4352199cbab13a3145e294125be5",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget-viewer/morph-motion.js",
+      "sha256": "67ab20c6d596c2c5a93f6750996deced4d1856e20df0f83f084f7034f3a3a001",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget-viewer/render-resolution.js",
+      "sha256": "0d88b3b5de31f961fd28156e956bdbe4c4059e9d2b0cadf99865cec784988753",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget-viewer/settle-motion.js",
+      "sha256": "2fae4e91f4980b02cea46fc833f04492c97778f1d9561b216d5781aab97fa832",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/oms-nugget-viewer/viewer.js",
+      "sha256": "574edeebb121fa30acd3ee8a24fd86fb860854ea4f03a5e180b8079e867b2f3f",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/three/addons/controls/OrbitControls.js",
+      "sha256": "471672386f759e4348da366831215c1b96b4f2c5aa31269d29a0258b98f9995e",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/three/addons/libs/fflate.module.js",
+      "sha256": "5686c3d02432a47d8e31f16cabc2d725bbf4531a3abb37cc6fd00142256e3730",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/three/addons/loaders/EXRLoader.js",
+      "sha256": "f7be0130cac5cb9b231a85cc510a7ce5bfe4c10c51db36c3566a6e33c2cf5d7f",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/three/addons/loaders/GLTFLoader.js",
+      "sha256": "d073b438e6a07e1359741dd5d6c76c953420cc0d4fd84eb1bdde94315540e6a3",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/three/addons/postprocessing/EffectComposer.js",
+      "sha256": "d234e578618fa816955ebdc059c049c577e203e650e33cf22bde3f232c29e669",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/three/addons/postprocessing/MaskPass.js",
+      "sha256": "328cf7db0da5d9be83ffe39d54b01d5ac1fddf108cc98182ddbb056f5c8b537f",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/three/addons/postprocessing/Pass.js",
+      "sha256": "b3c6128340eaa37e40a6a2f1b738e894c855239417d50959759b34a2b5e89f92",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/three/addons/postprocessing/RenderPass.js",
+      "sha256": "1c90c085312871c4bcdccfcf519499c6276dd503363fcf7cb7f703add45cf4a2",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/three/addons/postprocessing/ShaderPass.js",
+      "sha256": "3b28a1ee27e0eb96c0eab137a1f442ccf127a926904eced2d51e125ec44af781",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/three/addons/postprocessing/UnrealBloomPass.js",
+      "sha256": "8f09315c0cec117a0ca2494d3e3586035b3c4323d6dcb037537cc51b04c3cdba",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/three/addons/shaders/CopyShader.js",
+      "sha256": "4e3346db194db56a596cd074e9bdb39fb5eb52040c333e0d29dc4eb1324d3b1d",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/three/addons/shaders/LuminosityHighPassShader.js",
+      "sha256": "3d841cc594a0c1767d1b0185720b32761a0133c5f1b70b56658e28f2fb9b7900",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/three/addons/utils/BufferGeometryUtils.js",
+      "sha256": "b0c64fe6f3b9907262921b73fafc4ade874c07ba6b4876e164c87a830c2c2113",
+      "matchesProduction": true
+    },
+    {
+      "file": "public/three/three.module.js",
+      "sha256": "e7348ab8c7bf7a41f7afc5fe503c20a0ed090d9536aacf1ee975d7aaee24d394",
+      "matchesProduction": true
+    }
+  ]
+}

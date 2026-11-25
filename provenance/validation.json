@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-11-25T12:35:20.206805+00:00",
+  "build": "passed (Next.js 16.4.6 webpack; TypeScript passed)",
+  "tests": {
+    "passed": 59,
+    "failed": 0
+  },
+  "assets": {
+    "localReferences": 140,
+    "fallbackImages": 100,
+    "modelChecksums": 11
+  },
+  "browser": {
+    "desktop": [
+      "hero rendered with production assets",
+      "weight input updates total immediately; tested1000g",
+      "fullscreen viewer shows maximum weight with rays and dust",
+      "phone → code → explicit confirmation → opened result"
+    ],
+    "mobileLayout": [
+      "hero/configurator rendered",
+      "phone sheet checked with reduced viewport height",
+      "code → explicit confirmation → opened result",
+      "fullscreen maximum-weight nugget rendered"
+    ],
+    "deviceNote": "Desktop browser with viewport override; physical iPhone/Safari haptics and native keyboard were not retested in this extraction."
+  },
+  "source": "https://gold-metals.vercel.app/oms",
+  "productionBuildId": "lAmU61QIj1xCOLehM0mAA"
+}

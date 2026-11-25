@@ -1,0 +1,26 @@
+.link[data-slot='button'] {
+  display: none;
+  height: 56px;
+  margin-top: 24px;
+  padding-inline: 20px;
+  border: 0;
+  border-radius: 12px;
+  background-color: var(--yellow, #ffdd2d);
+  color: var(--primary-foreground, #333);
+  font: 400 17px/20px -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  letter-spacing: -.41px;
+}
+
+@media (max-width: 700px) {
+  .link.bars[data-slot='button'] {
+    display: inline-flex;
+    min-inline-size: 169px;
+  }
+}
+
+@media (max-width: 767px) {
+  .link.oms[data-slot='button'] {
+    display: inline-flex;
+    min-inline-size: 155px;
+  }
+}

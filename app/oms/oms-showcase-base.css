@@ -1,0 +1,16 @@
+.oms-landing { font-family:'OMS Body','Neue Haas Unica W1G','Helvetica Neue',Arial,sans-serif; }
+.oms-landing .main-nav { gap:0; }
+.oms-page { --oms-card: #f6f4f3; font-family:inherit; }
+.oms-page h1,.oms-page h2,.oms-page h3 { margin:0; font-family:'OMS Sans','T-Sans','Helvetica Neue',Arial,sans-serif; font-feature-settings:'liga' 0; letter-spacing:0; }
+.oms-page h1,.oms-page .section-title { font-family:'OMS Sans','T-Sans','Helvetica Neue',Arial,sans-serif; font-size:44px; line-height:48px; font-weight:700; }
+.oms-page p { margin:0; font-size:15px; line-height:24px; }
+.oms-nugget-viewer { position:relative; display:grid; place-items:center; width:100%; height:100%; }
+.oms-nugget-viewer iframe { position:absolute; inset:0; display:block; width:100%; height:100%; border:0; opacity:0; pointer-events:none; transition:opacity .24s ease; }
+.oms-nugget-loader { display:grid; place-items:center; }
+.oms-nugget-loader [data-slot='spinner'] { width:32px; height:32px; color:#ffdd2d; stroke-width:1.5; }
+.oms-nugget-error { padding:24px; color:var(--muted); text-align:center; }
+.oms-nugget-viewer.is-ready iframe { opacity:1; pointer-events:auto; }
+@media(prefers-reduced-motion:reduce) { .oms-page * { scroll-behavior:auto; } .oms-nugget-viewer iframe { transition:none; } .oms-nugget-loader [data-slot='spinner'] { animation:none; } }
+@font-face { font-family:'OMS Sans'; src:url('/fonts/oms-sans-bold.ttf') format('truetype'); font-weight:700; font-style:normal; font-display:swap; }
+@font-face { font-family:'OMS Body'; src:url('/fonts/oms-body-regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:'OMS Sans'; src:url('/fonts/oms-sans-medium.ttf') format('truetype'); font-weight:500; font-style:normal; font-display:swap; }

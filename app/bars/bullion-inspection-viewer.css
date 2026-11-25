@@ -1,0 +1,365 @@
+@import '../../public/inspection-effects/inspection-grain.css';
+
+:root {--inspection-surface-color:#191919}
+.bars-inspection {position:relative;width:100%;height:100%;border-radius:inherit}
+.bars-inspection-window {
+  display:block;position:absolute;inset:0;width:100%;height:100%;max-width:none;max-height:none;
+  margin:0;padding:0;border:0;background:transparent;color:inherit;overflow:visible;
+}
+.bars-inspection-stage {position:relative;width:100%;height:100%;transform:scale(1);transform-origin:center}
+.bars-inspection-opening-frame{position:absolute;left:50%;top:50%;width:100%;height:100%;transform:translate(-50%,-50%);visibility:hidden;pointer-events:none}
+.bars-inspection-return-frame{position:absolute;z-index:1;inset:0;width:100%;height:100%;border-radius:inherit;opacity:0;pointer-events:none}
+.bars-inspection-window:not([open]) + .bars-inspection-return-frame[data-captured]{opacity:1}
+.bars-inspection:has(>.bars-inspection-return-frame[data-captured])>.bars-inspection-window:not([open])>.bars-inspection-stage{opacity:0}
+.bars-inspection-inline-viewer {width:100%;height:100%}
+.bars-inspection-dust {position:absolute;z-index:0;inset:0;width:100%;height:100%;border:0;pointer-events:none}
+.bars-inspection-window:not([open])>.bars-inspection-dust,
+.bars-inspection-dust[data-dust-active='false'] {visibility:hidden}
+.bars-inspection-separate-viewer {position:absolute;inset:0}
+.bars-inspection-window[data-separate-inspection='true'] .bars-inspection-inline-viewer {visibility:hidden;pointer-events:none}
+.bars-inspection-window[open] {position:fixed;inset:0;width:100vw;height:100dvh;overflow:hidden;outline:none}
+.bars-inspection-window[open] .bars-inspection-stage {
+  position:absolute;z-index:1;left:50%;top:50%;width:var(--inspection-width);height:var(--inspection-height);
+  transform:translate(-50%,-50%) scale(1.3);will-change:transform;
+
+}
+/* Cover the light hero before scaling the transparent 3D canvas. Otherwise
+   the page bleeds through around the moving bar as a pale rim. On exit,
+   fade this surface out before dialog.close() to keep the return seamless. */
+.bars-inspection-window::backdrop {background:transparent}
+/* A persistent composited surface avoids a WebKit white frame when a
+   pseudo-element gains an animation while the dust iframe is removed. */
+.bars-inspection-surface {display:none;position:absolute;z-index:0;inset:0;background:var(--inspection-surface-color);opacity:1;pointer-events:none;will-change:opacity;transition:opacity 420ms cubic-bezier(.22,1,.36,1)}
+.bars-inspection-window[open]>.bars-inspection-surface {display:block}
+[data-gold-rays][open]>.bars-inspection-surface::before {
+  content: '';
+  position: absolute;
+  inset: var(--inspection-toolbar-bleed, 0px) 0 0;
+  background: radial-gradient(ellipse 58% 48% at 49% 102%, rgba(196,128,30,.23), transparent);
+}
+.bars-inspection-window[data-inspection-palette='amber'] {
+  --inspection-grain-opacity:.76;
+}
+[data-inspection-palette='amber'][open]>.bars-inspection-surface::before {
+  background: radial-gradient(ellipse 58% calc(48% * var(--inspection-rays-reach, 1)) at 49% calc(102% - var(--inspection-toolbar-bleed, 0px)), rgba(193,106,8,.23), transparent);
+}
+[data-rays-standby][open]:not(:has(>.bars-inspection-dust[data-rays-ready]))>.bars-inspection-surface::after {
+  content:'';
+  position:absolute;
+  inset:0 0 var(--inspection-toolbar-bleed,0px);
+  background:conic-gradient(from -33deg at 50% 101%,
+    transparent, rgba(205,143,14,.24) 12deg, transparent 20deg,
+    rgba(225,154,15,.26) 27deg, transparent 33deg,
+    rgba(224,132,11,.25) 41deg, transparent 50deg,
+    rgba(216,123,13,.19) 56deg, transparent 67deg);
+  mask-image:linear-gradient(to top,#000,transparent calc(64% * var(--inspection-rays-reach,1)));
+}
+@media (max-width:767px) {
+  .bars-final-surface .bars-inspection-window[data-inspection-palette='amber'] {
+    --inspection-rays-reach:.8;
+  }
+}
+.bars-inspection-dust {will-change:opacity;transition:opacity 420ms cubic-bezier(.22,1,.36,1)}
+.bars-inspection-window[data-closing='true']>.bars-inspection-surface,
+.bars-inspection-window[data-closing='true']>.bars-inspection-dust {opacity:0}
+@media (max-width:767px), (hover:none) and (pointer:coarse) {
+  :root:has(:is(.bars-final-surface,.oms-landing) .bars-inspection-window[open]) {
+    overflow-y:hidden;
+    overscroll-behavior-y:none;
+  }
+  :is(.bars-final-surface,.oms-landing) .bars-inspection-window[open] {
+    touch-action:pinch-zoom;
+  }
+  :is(.bars-final-surface,.oms-landing) .bars-inspection-window::backdrop {
+    display:none;
+  }
+  /* The rays continue to the bottom edge, including under Safari's toolbar. */
+  :is(.bars-final-surface,.oms-landing) .bars-inspection-window[open]:not([data-gold-rays])>.bars-inspection-dust,
+  :is(.bars-final-surface,.oms-landing) .bars-inspection-window[open]::after {
+    mask-image:linear-gradient(#000 calc(100% - 40px),transparent calc(100% - 6px));
+  }
+  /* WebKit can retain the last visible fixed layer's toolbar tint. Hide the
+     shell before it leaves the top layer, while its contents finish fading. */
+  :is(.bars-final-surface,.oms-landing) .bars-inspection-window:is([data-closing='true'],:not([open])) {
+    visibility:hidden;
+  }
+  :where(:is(.bars-final-surface,.oms-landing) .bars-inspection-window:is([data-closing='true'],:not([open])))>*,
+  :where(:is(.bars-final-surface,.oms-landing) .bars-inspection-window:is([data-closing='true'],:not([open])))::after {
+    visibility:visible;
+  }
+  :is(.bars-final-surface,.oms-landing) .bars-inspection-window:not([open]) {
+    display:contents;
+  }
+  :is(.bars-final-surface,.oms-landing) .bars-inspection-window:not([open])>.bars-inspection-stage {
+    position:absolute;
+    inset:0;
+  }
+  .bars-final-surface .bars-inspection-window:not([open])>.bars-inspection-stage {
+    overflow:hidden;
+    border-radius:inherit;
+  }
+}
+/* iOS Safari extends fixed layers as a solid toolbar color. An absolute
+   top-layer dialog lets Safari blur the scene that actually paints there. */
+/* Safari samples the sticky header for the upper toolbar. Match its color
+   and the document fallback to the scene until the closing transition starts. */
+:root[data-safari-inspection]:not(:has(.bars-inspection-window[data-document-positioned][data-closing='true'])) {
+  color-scheme:only dark;
+
+  &,
+  & body,
+  & :is(.bars-final-surface,.oms-landing,.product-mobile-nav) {
+    background-color:var(--inspection-surface-color);
+  }
+
+  & .bars-inspection-window[data-document-positioned][open] {
+    background-color:var(--inspection-surface-color);
+  }
+
+  /* Keep the transparent renderers in their own color scheme. */
+  & .bars-inspection-window iframe {
+    color-scheme:normal;
+  }
+}
+.bars-inspection-window[data-document-positioned]::backdrop {
+  display:none;
+}
+.bars-inspection-window[data-document-positioned][open] {
+  --inspection-toolbar-bleed:140px;
+  position:absolute;
+  inset:var(--inspection-scroll-top,0px) 0 auto;
+  overflow-x:clip;
+  overflow-y:visible;
+}
+@media (hover:none) and (pointer:coarse) {
+  .bars-final-surface .bars-inspection-window[data-document-positioned][data-inspection-controls][open] {
+    /* Reserve the expanded Safari toolbar space, including when entering with
+       the bars collapsed. The scene paint still extends beyond this box. */
+    height:100svh;
+
+    & .bars-inspection-weight-card {
+      bottom:calc(max(32px,env(safe-area-max-inset-bottom,0px)) - 8px);
+    }
+  }
+}
+.bars-inspection-toolbar-sample {
+  position:fixed;
+  z-index:5;
+  top:0;
+  inset-inline:0;
+  height:16px;
+  background:var(--inspection-surface-color);
+  /* Safari samples the background color of visible viewport edge elements. */
+  opacity:.12;
+  pointer-events:none;
+}
+.bars-inspection-window[data-closing]>.bars-inspection-toolbar-sample {display:none}
+.bars-inspection-window[data-document-positioned][open]>.bars-inspection-surface,
+.bars-inspection-window[data-document-positioned][open]::after {
+  top:calc(-1 * var(--inspection-toolbar-bleed));
+  bottom:calc(-1 * var(--inspection-toolbar-bleed));
+}
+.bars-inspection-window[data-document-positioned][open]>.bars-inspection-dust {
+  top:calc(-1 * var(--inspection-toolbar-bleed));
+  height:calc(100% + 2 * var(--inspection-toolbar-bleed));
+}
+.bars-inspection-window[data-document-positioned][open]>.bars-inspection-dust,
+.bars-inspection-window[data-document-positioned][open]::after {
+  mask-image:none;
+}
+.bars-final-surface .bars-inspection-window[data-document-positioned][data-inspection-controls][open] .bars-viewer {
+  overflow:visible;
+}
+.bars-final-surface .bars-inspection-window[data-document-positioned][data-inspection-controls][open] .bars-viewer iframe {
+  position:relative;
+  top:calc(-1 * var(--inspection-toolbar-bleed));
+  height:calc(100% + 2 * var(--inspection-toolbar-bleed));
+
+  @media (max-width:700px) {
+    /* Feather the edge where the native upper toolbar can cover the canvas. */
+    mask-image:linear-gradient(transparent var(--inspection-toolbar-bleed), #000 calc(var(--inspection-toolbar-bleed) + 40px));
+  }
+}
+.bars-inspection-window .bars-inspection-caption {position:absolute;z-index:2;top:32px;left:64px;right:64px;margin:0;text-align:center;text-wrap:balance;color:#fff;font:500 20px/24px -apple-system,BlinkMacSystemFont,system-ui,sans-serif;pointer-events:none}
+.bars-inspection-button[data-slot='button'] {
+  position:absolute;z-index:2;top:24px;right:24px;display:grid;place-items:center;
+  width:40px;height:40px;min-width:40px;padding:8px;border:0;border-radius:100px;
+  color:rgba(0,16,36,.22);background:#fff;cursor:pointer;
+  box-shadow:none;transition:color 160ms ease,background-color 160ms ease;
+}
+.bars-inspection-button[data-slot='button']:hover {color:rgba(0,16,36,.5);background:#fff}
+.bars-inspection-button[data-slot='button']:active {transform:none;translate:none}
+.bars-inspection-button[data-slot='button']:focus-visible {outline:2px solid #126df7;outline-offset:3px}
+.bars-inspection-close[data-slot='button'] {
+  --inspection-close-offset:24px;
+  top:calc(var(--inspection-close-offset) + env(safe-area-inset-top,0px));
+  right:calc(var(--inspection-close-offset) + env(safe-area-inset-right,0px));
+  color:#fff;background:rgba(255,255,255,.3);
+}
+.bars-inspection-close[data-slot='button']:hover {color:#fff;background:rgba(255,255,255,.4)}
+.bars-inspection-expand-icon {
+  display:block;width:24px;height:24px;background:currentColor;
+  mask:url('/bars-assets/inspection/expand.svg') center/24px 24px no-repeat;
+}
+.bars-inspection-expand[data-model-trigger][data-slot='button'] {
+  --model-trigger-height:448px;
+  inset:50% auto auto 50%;
+  width:min(calc((var(--model-trigger-height) - 20px) * var(--bars-model-aspect,.6) + 16px),100%);
+  height:min(var(--model-trigger-height),100%);
+  padding:0;
+  border-radius:12px;
+  background:transparent;
+  transform:translate(-50%,-50%);
+  touch-action:pan-y;
+  -webkit-tap-highlight-color:transparent;
+}
+.bars-inspection-expand[data-model-ready=false] { visibility:hidden }
+.bars-inspection-expand[data-model-interactive] { pointer-events:none }
+@media (max-width:700px) {
+  .bars-inspection-expand[data-model-trigger][data-slot='button'] { --model-trigger-height:244px }
+}
+.bars-inspection-close-icon {
+  display:block;width:16px;height:16px;background:currentColor;
+  mask:url('/bars-assets/modal/close.svg') center/16px 16px no-repeat;
+}
+.bars-inspection-status {position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto}
+.bars-inspection-loader {display:block;flex:none;animation:bars-viewer-spin .8s linear infinite}
+.bars-inspection-window[data-inspection-state='error'] .bars-inspection-stage {visibility:hidden}
+.bars-inspection-window[data-inspection-state='error'] .bars-inspection-status {z-index:1;color:rgba(255,255,255,.9)}
+.bars-inspection-error {display:flex;flex:none;flex-direction:column;align-items:center;width:min(720px,100%);text-align:center}
+.bars-inspection-error>img {display:block;flex:none;margin-bottom:32px;max-width:none}
+.bars-inspection-window .bars-inspection-error h2 {margin:0;max-width:560px;color:rgba(255,255,255,.9);font:500 28px/32px 'T-Sans','Helvetica Neue',Arial,sans-serif;font-feature-settings:'liga' 0}
+.bars-inspection-window .bars-inspection-error p {margin:16px 0 0;max-width:560px;color:rgba(255,255,255,.9);font:400 15px/24px 'T-Sans','Helvetica Neue',Arial,sans-serif}
+.bars-inspection-error .bars-inspection-retry[data-slot='button'] {min-height:56px;height:auto;margin-top:32px;padding:18px 20px;border:0;border-radius:12px;background:rgba(255,255,255,.1);color:#66a3ff;font:400 15px/20px 'T-Sans','Helvetica Neue',Arial,sans-serif;box-shadow:none;cursor:pointer}
+.bars-inspection-error .bars-inspection-retry[data-slot='button']:hover {background:rgba(255,255,255,.16)}
+@media (prefers-reduced-motion:reduce) {
+  .bars-inspection-surface,.bars-inspection-dust {transition:none}
+  .bars-inspection-loader {animation:none}
+}
+
+/* Keep the close control compact on the mobile inspection surface. */
+@media (max-width:767px) {
+  .bars-inspection-window[data-mobile-layout='centered'][open] {background:transparent}
+  .bars-inspection-window[data-mobile-layout='centered'] .bars-inspection-close[data-slot='button'] {
+    --inspection-close-offset:16px;
+    width:32px;height:32px;min-width:32px;padding:8px;
+    color:rgba(255,255,255,.5);background:rgba(255,255,255,.1);
+  }
+}
+
+@media (max-width:767px) {
+  .bars-inspection[data-lab-inline-rotation] > .bars-inspection-expand {display:none}
+}
+
+/* Only the real hero surface clips a flying object. Scaling the iframe itself
+   would introduce an inset clipping rectangle; the scene camera owns size. */
+.bars-inspection-window:not([open]){overflow:hidden;border-radius:inherit}
+.bars-inspection .bars-viewer{border-radius:0;background:transparent}
+@media(max-width:767px){
+  .bars-inspection .bars-viewer>img.bars-lab-fallback{scale:.85}
+  .bars-inspection-window[open] .bars-inspection-stage{transform:translate(-50%,-50%) scale(2.04)}
+}
+.bars-inspection-window .bars-viewer-loading>img{width:40px;height:40px;padding:0}
+
+@media(max-width:767px){
+  .bars-inspection-window .bars-inspection-caption{top:16px;font-size:17px}
+}
+
+/* Optional size-in-hand prototype, enabled only in the second bars lab. */
+.bars-hand-scale-button[data-slot='button']{top:calc(24px + 40px + 12px);bottom:auto}
+.bars-hand-scale-button[data-slot='button'][aria-pressed='true']{color:rgba(0,0,0,.8);background:#ffdd2d}
+.bars-hand-scale-button[data-slot='button']:disabled{opacity:.35;cursor:default}
+@media(max-width:767px){
+  .bars-inspection[data-mobile-inspection]>.bars-hand-scale-button[data-slot='button']{top:calc(16px + 32px + 12px);bottom:auto;right:16px;width:32px;height:32px;min-width:32px;padding:6px}
+}
+
+/* Atomic swap after the selected photograph decodes; keep the 3D scene mounted. */
+.bars-inspection-window:not([open])[data-hand-photo='photo'] .bars-inspection-inline-viewer {
+  /* The ready iframe explicitly sets visibility:visible. Hide the entire
+     composited layer so descendants cannot paint through the photograph. */
+  opacity:0;visibility:hidden;pointer-events:none;
+}
+.bars-hand-photo-clip {position:absolute;inset:0;overflow:hidden;border-radius:inherit;pointer-events:none}
+.bars-hand-photo {
+  position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;
+  pointer-events:none;visibility:hidden;
+}
+.bars-hand-photo img {display:block;height:100%;width:100%;object-fit:contain;object-position:center bottom;user-select:none}
+.bars-inspection[data-hand-photo='photo'] .bars-hand-photo {visibility:visible}
+
+/* The fixed frame clips the moving row on desktop and mobile alike. */
+.bars-inspection-window .bars-inspection-selection-title{
+  position:absolute;z-index:4;top:20px;left:64px;right:64px;height:24px;margin:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;
+  color:#fff;font:600 17px/24px -apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  letter-spacing:-.41px;pointer-events:none;
+}
+.bars-inspection-weight-number,.bars-inspection-price-number{
+  font:inherit;vertical-align:top;font-variant-numeric:tabular-nums;
+  --number-flow-mask-height:0px;--number-flow-mask-width:0px;
+}
+.bars-inspection-choices {
+  position:absolute;z-index:3;left:50%;bottom:max(32px,env(safe-area-inset-bottom));
+  display:flex;align-items:center;justify-content:center;gap:4px;
+  width:min(327px,calc(100% - 32px));height:85px;padding:8px;border-radius:24px;overflow:hidden;
+  transform:translateX(-50%);background:transparent;
+}
+.bars-inspection-choices[data-count='1']{justify-content:center}
+.bars-inspection-choices[data-ready='false']{pointer-events:none}
+.bars-inspection-panel-surface{
+  position:absolute;z-index:1;left:50%;bottom:max(32px,env(safe-area-inset-bottom));
+  width:min(327px,calc(100% - 32px));height:85px;border-radius:24px;transform:translateX(-50%);
+  background:rgba(255,255,255,.1);pointer-events:none;
+  transition:opacity 420ms cubic-bezier(.22,1,.36,1);
+}
+/* Keep the aliases in separate feature blocks: production minification can
+   otherwise retain only the last one and disable blur in the other browser. */
+@supports (-webkit-backdrop-filter:blur(5px)){
+  .bars-inspection-panel-surface{-webkit-backdrop-filter:blur(5px)}
+}
+@supports (backdrop-filter:blur(5px)){
+  .bars-inspection-panel-surface{backdrop-filter:blur(5px)}
+}
+.bars-inspection-window[data-closing] .bars-inspection-panel-surface{opacity:0}
+.bars-inspection-window[data-inspection-controls][open] .bars-inspection-stage{
+  z-index:2;width:100%;height:100%;transform:translate(-50%,-50%);
+}
+.bars-inspection-window[data-inspection-controls] .bars-inspection-status{z-index:3}
+.bars-inspection-thumbnail[data-slot='button'] {
+  display:flex;align-items:center;justify-content:center;flex:0 0 51px;width:51px;height:69px;min-height:69px;min-width:51px;
+  padding:12px;border:0;border-radius:16px;background:transparent;box-shadow:none;cursor:pointer;
+  /* Row X already follows the renderer spring. Button's transition-all would
+     interpolate it again and feed delayed coordinates back into the layout. */
+  transition:none;
+}
+.bars-inspection-thumbnail[data-slot='button']:hover {background:transparent}
+.bars-inspection-thumbnail[data-slot='button']:disabled {opacity:1;cursor:default}
+.bars-inspection-thumbnail[data-slot='button']:active {transform:none;translate:none;background:transparent}
+.bars-inspection-thumbnail[data-slot='button']:focus-visible {outline:2px solid #ffdd2d;outline-offset:2px}
+.bars-inspection-thumbnail-space{display:block;flex:none;width:27px;height:45px;pointer-events:none;transform:scale(1)}
+@media(min-width:768px) and (hover:hover) and (pointer:fine){
+  .bars-inspection-thumbnail-space{transition:transform 160ms cubic-bezier(.22,1,.36,1)}
+  .bars-inspection-thumbnail[data-hovered=true] .bars-inspection-thumbnail-space{transform:scale(1.1)}
+}
+.bars-inspection-thumbnail[data-pressed=true] .bars-inspection-thumbnail-space{transform:scale(.9)}
+.bars-inspection-thumbnail[data-press-animating=true] .bars-inspection-thumbnail-space{transition:none}
+.bars-inspection-window[data-inspection-controls] .bars-inspection-close[data-slot='button'] {
+  --inspection-close-offset:16px;
+  z-index:4;width:32px;height:32px;min-width:32px;padding:8px;
+  color:rgba(255,255,255,.5);background:rgba(255,255,255,.1);
+}
+.bars-inspection-window[data-inspection-controls] .bars-inspection-close[data-slot='button']:hover {background:rgba(255,255,255,.16)}
+.bars-inspection-window[data-inspection-controls] .bars-inspection-close-icon{mask-image:url('/inspection-assets/figma/close-cross.svg')}
+.bars-inspection[data-reduced-motion] .bars-inspection-choices,
+.bars-inspection[data-reduced-motion] .bars-inspection-panel-surface,
+.bars-inspection[data-reduced-motion] .bars-inspection-thumbnail-space{transition:none}
+@media(prefers-reduced-motion:reduce){
+  .bars-inspection-choices,.bars-inspection-panel-surface,.bars-inspection-thumbnail-space{transition:none}
+}
+@media(min-width:768px) and (max-height:799px){
+  .bars-inspection-window .bars-inspection-selection-title{top:8px}
+  .bars-inspection-choices,.bars-inspection-panel-surface{bottom:max(4px,env(safe-area-inset-bottom))}
+}
+@media(max-height:500px){
+  .bars-inspection-choices,.bars-inspection-panel-surface{bottom:max(16px,env(safe-area-inset-bottom))}
+}

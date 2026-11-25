@@ -1,0 +1,33 @@
+.bars-inspection-window[open]:not([data-inspection-state='error'])::after,
+#nugget-inspection[open][data-state='ready']::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: url('/inspection-effects/inspection-grain.png') left top / 96px 96px repeat;
+  mix-blend-mode: overlay;
+  opacity: var(--inspection-grain-opacity,.65);
+  transition: opacity 420ms cubic-bezier(.22,1,.36,1);
+}
+
+/* The bars control layout puts the canvas at z-index 2. Paint after it. */
+.bars-inspection-window[data-inspection-controls][open]::after {
+  z-index: 2;
+}
+
+.bars-inspection-window[open][data-closing='true']::after,
+#nugget-inspection[open][data-state='ready'][data-closing='true']::after {
+  opacity: 0;
+}
+
+.bars-inspection[data-reduced-motion] > .bars-inspection-window[open]::after {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bars-inspection-window[open]::after,
+  #nugget-inspection[open][data-state='ready']::after {
+    transition: none;
+  }
+}
